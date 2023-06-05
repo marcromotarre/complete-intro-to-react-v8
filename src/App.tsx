@@ -2,12 +2,13 @@ import { createRoot } from "react-dom/client";
 import Job from "./components/Job";
 
 import workExperienceData from "./data/WorkExperience.json";
-import sections from "./data/Sections.json";
 import { Section as SectionInterface } from "./interfaces/Section";
 import Section from "./components/Section";
 import Header from "./components/Header";
+import sections from "./data/Sections";
 
 const App = () => {
+  console.log(sections);
   const sectionsColumn1 = sections.filter(({ col }) => col === 1);
   const sectionsColumn2 = sections.filter(({ col }) => col === 2);
   return (

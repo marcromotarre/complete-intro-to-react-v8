@@ -1,8 +1,0 @@
-[
-  { "name": "Work Experience", "icon": "work-experience-icon", "col": 1 },
-  { "name": "Education", "icon": "work-experience-icon", "col": 1 },
-  { "name": "Technologies", "icon": "work-experience-icon", "col": 2 },
-  { "name": "Skills", "icon": "work-experience-icon", "col": 2 },
-  { "name": "Languages", "icon": "work-experience-icon", "col": 2 },
-  { "name": "Certificates", "icon": "work-experience-icon", "col": 2 }
-]
