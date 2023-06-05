@@ -1,21 +1,25 @@
 {
   "name": "marc-romo-resumee",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite src",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
   },
+  "keywords": [],
   "author": "Marc Romo",
   "license": "ISC",
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
     "prettier": "^2.8.8",
     "vite": "^4.3.9"
   },
