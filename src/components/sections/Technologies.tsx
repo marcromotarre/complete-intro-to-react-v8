@@ -1,4 +1,4 @@
-import technologiesData from "../../data/Technologies";
+import technologiesData from "../../data/TechnologiesData";
 import { Technology as TechnologyInterface } from "../../interfaces/Technology";
 import Technology from "../Technology";
 

@@ -1,10 +1,10 @@
-import { Job as JobInterface } from "../interfaces/Job";
+import JobInterface from "../interfaces/Job";
 
 const Job = (job: JobInterface) => {
   const { roleName, startDate, endDate, company, description, tecnologies } =
     job;
 
-  const formatDates = (startDate, endDate) => {
+  const formatDates = (startDate: string, endDate?: string) => {
     return `${new Date(startDate).getFullYear()} - ${
       endDate ? new Date(endDate).getFullYear() : "ACTUAL"
     }`;

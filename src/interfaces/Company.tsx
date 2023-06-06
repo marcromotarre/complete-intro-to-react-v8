@@ -1,3 +1,3 @@
 export type Company = {
-    name: string;
-}
+  name: string;
+};

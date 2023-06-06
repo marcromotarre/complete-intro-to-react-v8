@@ -1,5 +1,5 @@
 export type Technology = {
   name: string;
   icon: string;
-  click?: Function;
+  click?: (...args: any) => any;
 };

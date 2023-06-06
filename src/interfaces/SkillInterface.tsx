@@ -1,7 +1,7 @@
 type SkillInterface = {
   name: string;
   icon: string;
-  click?: Function;
+  click?: (...args: any) => any;
 };
 
 export default SkillInterface;
