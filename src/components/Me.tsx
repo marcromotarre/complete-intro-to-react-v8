@@ -1,5 +1,4 @@
 import me from "../data/MeData";
-import portfolioImage from "../icons/portfolio.jpg";
 const Me = () => {
   return (
     <div className="flex justify-center bg-main ">
@@ -10,7 +9,7 @@ const Me = () => {
           <img
             alt="me"
             className=" absolute  h-image-portfolio w-image-portfolio rounded-full"
-            src={portfolioImage}
+            src={`../icons/portfolio.jpg`}
           ></img>
         </div>
         <div className="grid grid-cols-1 gap-y-3 sm:justify-items-center">
