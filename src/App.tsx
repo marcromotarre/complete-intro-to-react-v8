@@ -19,16 +19,16 @@ const App = () => {
         <div className="bg-secondary" />
 
         <div></div>
-        <div className="flex justify-center">
+        <div className="flex justify-center pt-5">
           <div className="grid gap-x-16 sm:grid-cols-1 lg:grid-cols-2">
-            <div className="grid grid-cols-1 gap-y-3">
+            <div className="flex flex-col  justify-around">
               {sectionsColumn1.map(
                 (section: SectionInterface, index: number) => (
                   <Section key={index} {...section}></Section>
                 )
               )}
             </div>
-            <div className="grid grid-cols-1 gap-y-3">
+            <div className="flex flex-col justify-around">
               {sectionsColumn2.map(
                 (section: SectionInterface, index: number) => (
                   <Section key={index} {...section}></Section>
@@ -43,5 +43,7 @@ const App = () => {
 };
 
 const container = document.getElementById("root");
-const root = createRoot(container);
-root.render(<App />);
+if (container) {
+  const root = createRoot(container);
+  root.render(<App />);
+}
