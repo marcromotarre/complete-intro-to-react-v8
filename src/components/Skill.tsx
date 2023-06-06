@@ -1,13 +1,13 @@
-import { Technology as TechnologyInterface } from "../interfaces/Technology";
+import SkillInterface from "../interfaces/SkillInterface";
 
-const Technology = (technology: TechnologyInterface) => {
-  const { name, icon, click } = technology;
+const Skill = (skill: SkillInterface) => {
+  const { name, icon, click } = skill;
 
   return (
     <div className="grid grid-cols-1 justify-center justify-items-center gap-y-2 align-middle">
       <img
         className="h-14"
-        src={`../icons/technologies/${icon}.svg`}
+        src={`../icons/skills/${icon}.svg`}
         alt="some file"
         onClick={() => {
           if (click) click();
@@ -18,4 +18,4 @@ const Technology = (technology: TechnologyInterface) => {
   );
 };
 
-export default Technology;
+export default Skill;

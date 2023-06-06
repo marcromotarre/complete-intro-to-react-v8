@@ -1,4 +1,5 @@
 import Certificates from "../components/sections/Certificates";
+import Education from "../components/sections/Education";
 import Languages from "../components/sections/Languages";
 import Skills from "../components/sections/Skills";
 import Technologies from "../components/sections/Technologies";
@@ -16,7 +17,7 @@ export default [
     name: "Education",
     icon: "section-education",
     size: 100,
-    component: WorkExperience,
+    component: Education,
     col: 1,
   },
   {

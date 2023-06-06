@@ -1,6 +1,6 @@
 import { Company } from "./Company";
 
-export type Job = {
+type JobInterface = {
   roleName: string;
   description: string;
   company: Company;
@@ -9,3 +9,5 @@ export type Job = {
   tecnologies?: Array<string>;
   hashtags?: Array<string>;
 };
+
+export default JobInterface;

@@ -1,7 +1,8 @@
 import { Job as JobInterface } from "../interfaces/Job";
 
 const Job = (job: JobInterface) => {
-  const { roleName, startDate, endDate, company, description } = job;
+  const { roleName, startDate, endDate, company, description, tecnologies } =
+    job;
 
   const formatDates = (startDate, endDate) => {
     return `${new Date(startDate).getFullYear()} - ${
@@ -9,13 +10,25 @@ const Job = (job: JobInterface) => {
     }`;
   };
   return (
-    <div className="grid grid-cols-1 gap-y-1">
-      <div className="flex">
-        <h1 className="pr-2 decoration-slate-600">{roleName}</h1>
-        <h6>{formatDates(startDate, endDate)}</h6>
+    <div className="grid grid-cols-[20px_auto] gap-x-3">
+      <div className="m-2 h-2 w-2 rounded-full bg-dark-text"></div>
+      <div className="grid grid-cols-1 gap-y-1">
+        <div className="flex">
+          <h1 className="pr-2 text-lg font-normal uppercase text-dark-text">
+            {roleName}
+          </h1>
+          <h6 className="text-base font-light text-light-text">
+            {formatDates(startDate, endDate)}
+          </h6>
+        </div>
+        <h6 className="text-base font-light text-light-text">{company.name}</h6>
+        <p className="text-sm font-light text-medium-text">{description}</p>
+        {tecnologies && (
+          <p className="text-sm font-medium text-medium-text">
+            {tecnologies.join(", ")}
+          </p>
+        )}
       </div>
-      <h6>{company.name}</h6>
-      <p>{description}</p>
     </div>
   );
 };
