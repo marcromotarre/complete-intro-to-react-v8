@@ -1,3 +1,4 @@
+import { ICONS_PATH } from "../constants";
 import { Technology as TechnologyInterface } from "../interfaces/Technology";
 
 const Technology = (technology: TechnologyInterface) => {
@@ -10,11 +11,7 @@ const Technology = (technology: TechnologyInterface) => {
           if (click) click();
         }}
       >
-        <img
-          className="h-14"
-          src={`../icons/technologies/${icon}.svg`}
-          alt="some file"
-        />
+        <img className="h-14" src={icon} alt="some file" />
       </button>
       <p className="text-xs capitalize text-light-text">{name}</p>
     </div>

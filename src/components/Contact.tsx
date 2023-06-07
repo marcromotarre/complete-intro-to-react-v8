@@ -6,11 +6,7 @@ const Contact = () => {
         {contactData.map(({ value, icon, click }, index) => (
           <div key={index} className="flex w-max items-center">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white">
-              <img
-                className="h-6"
-                src={`../icons/contact/${icon}.svg`}
-                alt="some file"
-              />
+              <img className="h-6" src={icon} alt="some file" />
             </div>
             <p className="pl-4 font-light text-white sm:text-base md:text-xs lg:text-base">
               {value}

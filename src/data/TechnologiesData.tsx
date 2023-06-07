@@ -1,7 +1,9 @@
+import { ICONS_PATH } from "../constants";
+
 export default [
   {
     name: "react",
-    icon: "technology-react",
+    icon: `${ICONS_PATH}technologies/technology-react.svg`,
     click: () => {
       console.log("click on technology react");
     },
@@ -9,49 +11,49 @@ export default [
 
   {
     name: "nextjs",
-    icon: "technology-nextjs",
+    icon: `${ICONS_PATH}technologies/technology-nextjs.svg`,
     click: () => {
       console.log("click on technology nextjs");
     },
   },
   {
     name: "nodejs",
-    icon: "technology-nodejs",
+    icon: `${ICONS_PATH}technologies/technology-nodejs.svg`,
     click: () => {
       console.log("click on technology nodejs");
     },
   },
   {
     name: "webpack",
-    icon: "technology-webpack",
+    icon: `${ICONS_PATH}technologies/technology-webpack.svg`,
     click: () => {
       console.log("click on technology webpack");
     },
   },
   {
     name: "git",
-    icon: "technology-git",
+    icon: `${ICONS_PATH}technologies/technology-git.svg`,
     click: () => {
       console.log("click on technology git");
     },
   },
   {
     name: "redux",
-    icon: "technology-redux",
+    icon: `${ICONS_PATH}technologies/technology-redux.svg`,
     click: () => {
       console.log("click on technology redux");
     },
   },
   {
     name: "recoil",
-    icon: "technology-recoil",
+    icon: `${ICONS_PATH}technologies/technology-recoil.svg`,
     click: () => {
       console.log("click on technology recoil");
     },
   },
   {
     name: "typescript",
-    icon: "technology-typescript",
+    icon: `${ICONS_PATH}technologies/technology-typescript.svg`,
     click: () => {
       console.log("click on technology typescript");
     },
@@ -59,21 +61,21 @@ export default [
 
   {
     name: "javascript",
-    icon: "technology-javascript",
+    icon: `${ICONS_PATH}technologies/technology-javascript.svg`,
     click: () => {
       console.log("click on technology javascript");
     },
   },
   {
     name: "figma",
-    icon: "technology-figma",
+    icon: `${ICONS_PATH}technologies/technology-figma.svg`,
     click: () => {
       console.log("click on technology figma");
     },
   },
   {
     name: "cypress",
-    icon: "technology-cypress",
+    icon: `${ICONS_PATH}technologies/technology-cypress.svg`,
     click: () => {
       console.log("click on technology cypress");
     },
@@ -81,28 +83,28 @@ export default [
 
   {
     name: "jest",
-    icon: "technology-jest",
+    icon: `${ICONS_PATH}technologies/technology-jest.svg`,
     click: () => {
       console.log("click on technology jest");
     },
   },
   {
     name: "yarn",
-    icon: "technology-yarn",
+    icon: `${ICONS_PATH}technologies/technology-yarn.svg`,
     click: () => {
       console.log("click on technology yarn");
     },
   },
   {
     name: "npm",
-    icon: "technology-npm",
+    icon: `${ICONS_PATH}technologies/technology-npm.svg`,
     click: () => {
       console.log("click on technology npm");
     },
   },
   {
     name: "prisma",
-    icon: "technology-prisma",
+    icon: `${ICONS_PATH}technologies/technology-prisma.svg`,
     click: () => {
       console.log("click on technology prisma");
     },

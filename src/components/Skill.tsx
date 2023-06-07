@@ -10,11 +10,7 @@ const Skill = (skill: SkillInterface) => {
           if (click) click();
         }}
       >
-        <img
-          className="h-14"
-          src={`../icons/skills/${icon}.svg`}
-          alt="some file"
-        />
+        <img className="h-14" src={icon} alt="some file" />
       </button>
       <p className="text-xs capitalize text-light-text">{name}</p>
     </div>

@@ -4,46 +4,47 @@ import Languages from "../components/sections/Languages";
 import Skills from "../components/sections/Skills";
 import Technologies from "../components/sections/Technologies";
 import WorkExperience from "../components/sections/WorkExperience";
+import { ICONS_PATH } from "../constants";
 
 export default [
   {
     name: "Work Experience",
-    icon: "section-work-experience",
+    icon: `${ICONS_PATH}sections/section-work-experience.svg`,
     size: 100,
     component: WorkExperience,
     col: 1,
   },
   {
     name: "Education",
-    icon: "section-education",
+    icon: `${ICONS_PATH}sections/section-education.svg`,
     size: 100,
     component: Education,
     col: 1,
   },
   {
     name: "Technologies",
-    icon: "section-technologies",
+    icon: `${ICONS_PATH}sections/section-technologies.svg`,
     size: 80,
     component: Technologies,
     col: 2,
   },
   {
     name: "Skills",
-    icon: "section-skills",
+    icon: `${ICONS_PATH}sections/section-skills.svg`,
     size: 100,
     component: Skills,
     col: 2,
   },
   {
     name: "Languages",
-    icon: "section-languages",
+    icon: `${ICONS_PATH}sections/section-languages.svg`,
     size: 100,
     component: Languages,
     col: 2,
   },
   {
     name: "Certificates",
-    icon: "section-certificates",
+    icon: `${ICONS_PATH}sections/section-certificates.svg`,
     size: 100,
     component: Certificates,
 

@@ -11,11 +11,7 @@ const Section = (section: SectionInterface) => {
           <div className="h-0.5 w-full bg-black"></div>
         </div>
         <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-black">
-          <img
-            className="h-6"
-            src={`../icons/sections/${icon}.svg`}
-            alt="some file"
-          />
+          <img className="h-6" src={icon} alt="some file" />
         </div>
       </div>
       <div className="w-full">{component()}</div>
