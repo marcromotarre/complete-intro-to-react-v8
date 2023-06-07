@@ -8,7 +8,7 @@ export default [
   },
   {
     name: "team work",
-    icon: `icons/skills/skill-work-team.svg`,
+    icon: `icons/skills/skill-team-work.svg`,
     click: () => {
       console.log("click on skill team work");
     },

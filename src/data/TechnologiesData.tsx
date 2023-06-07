@@ -1,4 +1,5 @@
 import { NavigateFunction } from "react-router";
+import Modal, { ModalProps } from "../components/common/modal/Modal";
 
 export default [
   {
@@ -47,8 +48,16 @@ export default [
   {
     name: "recoil",
     icon: `icons/technologies/technology-recoil.svg`,
-    click: () => {
-      console.log("click on technology recoil");
+    click: ({
+      setModalProps,
+    }: {
+      setModalProps: React.Dispatch<React.SetStateAction<ModalProps>>;
+    }) => {
+      setModalProps({
+        title: "State Management Libraries for React",
+        children: <div>hola</div>,
+        open: true,
+      });
     },
   },
   {
