@@ -4,7 +4,6 @@ import Languages from "../components/sections/Languages";
 import Skills from "../components/sections/Skills";
 import Technologies from "../components/sections/Technologies";
 import WorkExperience from "../components/sections/WorkExperience";
-import { ICONS_PATH } from "../constants";
 
 export default [
   {

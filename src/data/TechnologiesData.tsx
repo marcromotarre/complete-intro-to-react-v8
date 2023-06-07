@@ -1,5 +1,3 @@
-import { ICONS_PATH } from "../constants";
-
 export default [
   {
     name: "react",
@@ -62,8 +60,8 @@ export default [
   {
     name: "javascript",
     icon: `icons/technologies/technology-javascript.svg`,
-    click: () => {
-      console.log("click on technology javascript");
+    click: ({ navigate }) => {
+      navigate("/javascript");
     },
   },
   {
