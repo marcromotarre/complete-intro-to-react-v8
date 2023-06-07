@@ -1,18 +1,16 @@
-import { useEffect, useRef, MutableRefObject, ReactElement } from "react";
+import React, {
+  useEffect,
+  useRef,
+  MutableRefObject,
+  ReactElement,
+} from "react";
 import { createPortal } from "react-dom";
-import CloseIcon from "../icons/close";
 
-const Modal = ({
-  open = false,
-  title = "",
-  children,
-  onClose = () => {},
-}: ModalProps) => {
+const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   const elRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   if (!elRef.current) {
     elRef.current = document.createElement("div");
   }
-  if (!open) return;
 
   useEffect(() => {
     const modalRoot = document.getElementById("modal");
@@ -27,6 +25,18 @@ const Modal = ({
     };
   }, []);
 
+  const header: ReactElement | undefined = children?.find(
+    (modalComponent: ReactElement) => modalComponent.type.name === "ModalHeader"
+  );
+
+  const body: ReactElement | undefined = children?.find(
+    (modalComponent) => modalComponent.type.name === "ModalBody"
+  );
+
+  const footer: ReactElement | undefined = children?.find(
+    (modalComponent) => modalComponent.type.name === "ModalFooter"
+  );
+
   return createPortal(
     <div className="z-30">
       <button
@@ -37,33 +47,61 @@ const Modal = ({
         className="fixed left-1/2 top-1/2  min-w-[600px] -translate-x-1/2 -translate-y-1/2
        rounded bg-white"
       >
-        <div className="flex w-full items-center justify-between border-b border-gray-600 p-4">
-          <h1 className="text-xl font-semibold">{title}</h1>
-          <button
-            className="group rounded-md p-2 hover:bg-robin-egg-blue"
-            onClick={() => onClose()}
-          >
-            <CloseIcon
-              className="fill-robin-egg-blue group-hover:fill-black"
-              size={12}
-            />
-          </button>
-        </div>
-        {children ? <div className="p-4">{children}</div> : <div></div>}
-        <div className="w-full  border-b border-gray-600 p-4"></div>
-        <div className="w-full p-4">
-          <p>footer</p>
-        </div>
+        {header && React.cloneElement(header, { onClose, ...header.props })}
+        {body && body}
+        {footer && footer}
       </div>
     </div>,
     elRef.current
   );
 };
 
+import CloseIcon from "../icons/close";
+
+const ModalHeader = ({
+  title,
+  onClose,
+}: {
+  title: string;
+  onClose?: VoidFunction;
+}) => {
+  return (
+    <div className="flex w-full items-center justify-between border-b border-gray-600 p-4">
+      <h1 className="text-xl font-semibold">{title}</h1>
+      <button
+        className="group rounded-md p-2 hover:bg-robin-egg-blue"
+        onClick={() => {
+          if (onClose) onClose();
+        }}
+      >
+        <CloseIcon
+          className="fill-robin-egg-blue group-hover:fill-black"
+          size={12}
+        />
+      </button>
+    </div>
+  );
+};
+
+const ModalBody = ({ children }: { children?: ReactElement }) => {
+  return <>{children ? <div className="p-4">{children}</div> : <div></div>}</>;
+};
+
+const ModalFooter = ({ children }: { children?: ReactElement }) => {
+  return (
+    <>
+      <div className="w-full  border-b border-gray-600 p-4"></div>
+      <div className="w-full p-2">{children}</div>
+    </>
+  );
+};
+
+Modal.Header = ModalHeader;
+Modal.Body = ModalBody;
+Modal.Footer = ModalFooter;
+
 export type ModalProps = {
-  open?: boolean;
-  title?: string;
-  children?: ReactElement;
+  children?: Array<ReactElement>;
   onClose?: VoidFunction;
 };
 

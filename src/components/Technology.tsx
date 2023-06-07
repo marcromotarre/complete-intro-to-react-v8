@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { Technology as TechnologyInterface } from "../interfaces/TechnologyInterface";
+import TechnologyInterface from "../interfaces/TechnologyInterface";
 import { useState } from "react";
 import Modal, { ModalProps } from "./common/modal/Modal";
 
@@ -21,11 +21,18 @@ const Technology = (technology: TechnologyInterface) => {
       <p className="text-xs capitalize text-light-text">{name}</p>
       {showModal && (
         <Modal
-          {...modalProps}
           onClose={() => {
             setShowModal(false);
           }}
-        ></Modal>
+        >
+          <Modal.Header title="this is my modal"></Modal.Header>
+          <Modal.Body>
+            <p>2</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <p>3</p>
+          </Modal.Footer>
+        </Modal>
       )}
     </div>
   );
