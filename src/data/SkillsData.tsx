@@ -1,5 +1,3 @@
-import { ICONS_PATH } from "../constants";
-
 export default [
   {
     name: "creative",

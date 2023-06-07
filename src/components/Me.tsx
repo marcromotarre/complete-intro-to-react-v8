@@ -1,4 +1,3 @@
-import { ICONS_PATH } from "../constants";
 import me from "../data/MeData";
 const Me = () => {
   return (

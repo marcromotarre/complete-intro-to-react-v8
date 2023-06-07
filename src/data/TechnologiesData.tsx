@@ -1,3 +1,5 @@
+import { NavigateFunction } from "react-router";
+
 export default [
   {
     name: "react",
@@ -60,7 +62,7 @@ export default [
   {
     name: "javascript",
     icon: `icons/technologies/technology-javascript.svg`,
-    click: ({ navigate }) => {
+    click: ({ navigate }: { navigate?: NavigateFunction }) => {
       navigate("/javascript");
     },
   },
