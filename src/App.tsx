@@ -4,6 +4,7 @@ import Section from "./components/Section";
 import Header from "./components/Header";
 import sections from "./data/Sections";
 import Me from "./components/Me";
+import Contact from "./components/Contact";
 
 const App = () => {
   const sectionsColumn1 = sections.filter(({ col }) => col === 1);
@@ -15,20 +16,22 @@ const App = () => {
         <Me />
         <div className="bg-main" />
         <div className="bg-secondary" />
-        <div className="h-14 bg-secondary"></div>
+        <div className="bg-secondary p-3">
+          <Contact />
+        </div>
         <div className="bg-secondary" />
 
         <div></div>
         <div className="flex justify-center pt-5">
           <div className="grid gap-x-16 sm:grid-cols-1 lg:grid-cols-2">
-            <div className="flex flex-col  justify-around">
+            <div className="flex flex-col  justify-between">
               {sectionsColumn1.map(
                 (section: SectionInterface, index: number) => (
                   <Section key={index} {...section}></Section>
                 )
               )}
             </div>
-            <div className="flex flex-col justify-around">
+            <div className="flex flex-col justify-between">
               {sectionsColumn2.map(
                 (section: SectionInterface, index: number) => (
                   <Section key={index} {...section}></Section>
