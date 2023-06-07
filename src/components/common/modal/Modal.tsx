@@ -50,6 +50,10 @@ const Modal = ({
           </button>
         </div>
         {children ? <div className="p-4">{children}</div> : <div></div>}
+        <div className="w-full  border-b border-gray-600 p-4"></div>
+        <div className="w-full p-4">
+          <p>footer</p>
+        </div>
       </div>
     </div>,
     elRef.current
