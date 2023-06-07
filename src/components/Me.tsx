@@ -1,3 +1,4 @@
+import { ICONS_PATH } from "../constants";
 import me from "../data/MeData";
 const Me = () => {
   return (
@@ -9,7 +10,7 @@ const Me = () => {
           <img
             alt="me"
             className=" absolute  h-image-portfolio w-image-portfolio rounded-full"
-            src={`../icons/portfolio.jpg`}
+            src={`${ICONS_PATH}portfolio.jpg`}
           ></img>
         </div>
         <div className="grid grid-cols-1 gap-y-3 sm:justify-items-center">
