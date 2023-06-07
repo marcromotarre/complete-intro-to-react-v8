@@ -10,7 +10,7 @@ const Me = () => {
           <img
             alt="me"
             className=" absolute  h-image-portfolio w-image-portfolio rounded-full"
-            src={`${ICONS_PATH}portfolio.jpg`}
+            src={`images/portfolio.jpg`}
           ></img>
         </div>
         <div className="grid grid-cols-1 gap-y-3 sm:justify-items-center">

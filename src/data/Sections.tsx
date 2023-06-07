@@ -9,42 +9,42 @@ import { ICONS_PATH } from "../constants";
 export default [
   {
     name: "Work Experience",
-    icon: `${ICONS_PATH}sections/section-work-experience.svg`,
+    icon: `icons/sections/section-work-experience.svg`,
     size: 100,
     component: WorkExperience,
     col: 1,
   },
   {
     name: "Education",
-    icon: `${ICONS_PATH}sections/section-education.svg`,
+    icon: `icons/sections/section-education.svg`,
     size: 100,
     component: Education,
     col: 1,
   },
   {
     name: "Technologies",
-    icon: `${ICONS_PATH}sections/section-technologies.svg`,
+    icon: `icons/sections/section-technologies.svg`,
     size: 80,
     component: Technologies,
     col: 2,
   },
   {
     name: "Skills",
-    icon: `${ICONS_PATH}sections/section-skills.svg`,
+    icon: `icons/sections/section-skills.svg`,
     size: 100,
     component: Skills,
     col: 2,
   },
   {
     name: "Languages",
-    icon: `${ICONS_PATH}sections/section-languages.svg`,
+    icon: `icons/sections/section-languages.svg`,
     size: 100,
     component: Languages,
     col: 2,
   },
   {
     name: "Certificates",
-    icon: `${ICONS_PATH}sections/section-certificates.svg`,
+    icon: `icons/sections/section-certificates.svg`,
     size: 100,
     component: Certificates,
 
