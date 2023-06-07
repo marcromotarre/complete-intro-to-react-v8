@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { Technology as TechnologyInterface } from "../interfaces/Technology";
+import { Technology as TechnologyInterface } from "../interfaces/TechnologyInterface";
 import { useState } from "react";
 import Modal, { ModalProps } from "./common/modal/Modal";
 

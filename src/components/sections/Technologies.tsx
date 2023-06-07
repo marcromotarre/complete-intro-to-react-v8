@@ -1,5 +1,5 @@
 import technologiesData from "../../data/TechnologiesData";
-import { Technology as TechnologyInterface } from "../../interfaces/Technology";
+import TechnologyInterface from "../../interfaces/TechnologyInterface";
 import Technology from "../Technology";
 
 const Technologies = () => {
