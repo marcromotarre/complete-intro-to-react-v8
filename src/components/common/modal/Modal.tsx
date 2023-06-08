@@ -49,9 +49,7 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
         className="fixed left-1/2  top-1/2 h-[min(fit-content,90vh)] w-[min(600px,95%)] -translate-x-1/2 -translate-y-1/2
        rounded bg-white"
       >
-        {header && React.cloneElement(header, { onClose, ...header.props })}
-        {body && body}
-        {footer && footer}
+        <p>hi</p>
       </div>
     </div>,
     elRef.current
