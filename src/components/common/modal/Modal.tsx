@@ -6,6 +6,7 @@ import React, {
 } from "react";
 import { createPortal } from "react-dom";
 import CloseIcon from "../icons/close";
+import Title from "../Title";
 
 const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   const elRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
@@ -68,14 +69,8 @@ const ModalHeader = ({
 }) => {
   return (
     <div className="flex w-full items-center justify-between border-b border-gray-600 p-4">
-      <div
-        className={`grid ${
-          icon ? "grid-cols-[max-content_auto]" : "grid-cols-1"
-        } items-center justify-center gap-x-2`}
-      >
-        <div>{icon && icon}</div>
-        <h1 className="text-xl font-semibold">{title}</h1>
-      </div>
+      <Title icon={icon} title={title} />
+
       <button
         className="group rounded-md p-2 hover:bg-robin-egg-blue"
         onClick={() => {

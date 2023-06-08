@@ -1,21 +1,35 @@
-import { useState } from "react";
 import Modal from "../common/modal/Modal";
-import ReactIcon from "../common/icons/react";
+import ReactIcon from "../common/icons/ReactIcon";
 import InfoIcon from "../common/icons/InfoIcon";
+import classnames from "classnames";
+import { useNavigate } from "react-router-dom";
 
-const ReactModal = () => {
+const ReactModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
+  const navigate = useNavigate();
   const buttons = [
-    { name: "My Components", color: "denim" },
-    { name: "Patterns", color: "jade" },
-    { name: "Testing", color: "dodger-blue" },
-    { name: "Hooks", color: "silver" },
-    { name: "Project Setup", color: "yellow-orange" },
-    { name: "Styling", color: "denim" },
-    { name: "Interesting Questions", color: "silver" },
+    {
+      name: "My Components",
+      color: "bg-denim",
+      navigate: "/react/my-components",
+    },
+    { name: "Patterns", color: "bg-jade", navigate: "/react/patterns" },
+    { name: "Testing", color: "bg-dodger-blue", navigate: "/react/testing" },
+    { name: "Hooks", color: "bg-silver", navigate: "/react/patterns" },
+    {
+      name: "Project Setup",
+      color: "bg-yellow-orange",
+      navigate: "/react/project-setup",
+    },
+    { name: "Styling", color: "bg-denim", navigate: "/react/patterns" },
+    {
+      name: "Interesting Questions",
+      color: "bg-silver",
+      navigate: "/react/questions",
+    },
   ];
   return (
     <>
-      <Modal onClose={() => {}}>
+      <Modal onClose={onClose}>
         <Modal.Header
           title="React"
           icon={<ReactIcon size={30} />}
@@ -35,10 +49,18 @@ const ReactModal = () => {
             <div className="flex flex-wrap justify-start">
               {buttons.map((button, index) => (
                 <button
+                  onClick={() => {
+                    navigate(button.navigate);
+                  }}
                   key={index}
-                  className={`m-2  rounded-md p-3 bg-${button.color}`}
+                  className={classnames(
+                    button.color,
+                    "m-2",
+                    "rounded-md",
+                    "p-3"
+                  )}
                 >
-                  <p className="w-max font-light text-white">{button.name}</p>
+                  <p className={`w-max font-light text-white`}>{button.name}</p>
                 </button>
               ))}
             </div>

@@ -1,5 +1,7 @@
 import { NavigateFunction } from "react-router";
 import Modal, { ModalProps } from "../components/common/modal/Modal";
+import ReactModal from "../components/mr-modals/ReactModal";
+import ReduxModal from "../components/mr-modals/ReduxModal";
 
 export default [
   {
@@ -8,6 +10,7 @@ export default [
     click: () => {
       console.log("click on technology react");
     },
+    modal: <ReactModal />,
   },
 
   {
@@ -16,6 +19,7 @@ export default [
     click: () => {
       console.log("click on technology nextjs");
     },
+    modal: <ReactModal />,
   },
   {
     name: "nodejs",
@@ -23,6 +27,7 @@ export default [
     click: () => {
       console.log("click on technology nodejs");
     },
+    modal: <ReactModal />,
   },
   {
     name: "webpack",
@@ -30,6 +35,7 @@ export default [
     click: () => {
       console.log("click on technology webpack");
     },
+    modal: <ReactModal />,
   },
   {
     name: "git",
@@ -37,6 +43,7 @@ export default [
     click: () => {
       console.log("click on technology git");
     },
+    modal: <ReactModal />,
   },
   {
     name: "redux",
@@ -44,6 +51,7 @@ export default [
     click: () => {
       console.log("click on technology redux");
     },
+    modal: <ReduxModal />,
   },
   {
     name: "recoil",
@@ -59,6 +67,7 @@ export default [
         open: true,
       });
     },
+    modal: <ReactModal />,
   },
   {
     name: "typescript",
@@ -66,6 +75,7 @@ export default [
     click: () => {
       console.log("click on technology typescript");
     },
+    modal: <ReactModal />,
   },
 
   {
@@ -74,6 +84,7 @@ export default [
     click: ({ navigate }: { navigate?: NavigateFunction }) => {
       navigate("/javascript");
     },
+    modal: <ReactModal />,
   },
   {
     name: "figma",
@@ -81,6 +92,7 @@ export default [
     click: () => {
       console.log("click on technology figma");
     },
+    modal: <ReactModal />,
   },
   {
     name: "cypress",
@@ -88,6 +100,7 @@ export default [
     click: () => {
       console.log("click on technology cypress");
     },
+    modal: <ReactModal />,
   },
 
   {
@@ -96,6 +109,7 @@ export default [
     click: () => {
       console.log("click on technology jest");
     },
+    modal: <ReactModal />,
   },
   {
     name: "yarn",
@@ -103,6 +117,7 @@ export default [
     click: () => {
       console.log("click on technology yarn");
     },
+    modal: <ReactModal />,
   },
   {
     name: "npm",
@@ -110,6 +125,7 @@ export default [
     click: () => {
       console.log("click on technology npm");
     },
+    modal: <ReactModal />,
   },
   {
     name: "prisma",
@@ -117,5 +133,6 @@ export default [
     click: () => {
       console.log("click on technology prisma");
     },
+    modal: <ReactModal />,
   },
 ];
