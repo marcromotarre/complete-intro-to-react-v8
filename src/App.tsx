@@ -10,14 +10,14 @@ import ReduxPage from "./pages/ReduxPage";
 const App = () => {
   return (
     <BrowserRouter>
-      {/*<Provider store={store}>*/}
-      <Routes>
-        <Route path="/" element={<PortfolioPage />} />
-        <Route path="/javascript" element={<JavascriptPage />} />
-        <Route path="/react/:id" element={<ReactPage />} />
-        <Route path="/redux/" element={<ReduxPage />} />
-      </Routes>
-      {/*</Provider>*/}
+      <Provider store={store}>
+        <Routes>
+          <Route path="/" element={<PortfolioPage />} />
+          <Route path="/javascript" element={<JavascriptPage />} />
+          <Route path="/react/:id" element={<ReactPage />} />
+          <Route path="/redux/" element={<ReduxPage />} />
+        </Routes>
+      </Provider>
     </BrowserRouter>
   );
 };

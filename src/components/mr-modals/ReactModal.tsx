@@ -3,6 +3,7 @@ import ReactIcon from "../common/icons/ReactIcon";
 import InfoIcon from "../common/icons/InfoIcon";
 import classnames from "classnames";
 import { useNavigate } from "react-router-dom";
+import Code from "../common/code/Code";
 
 const ReactModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
   const navigate = useNavigate();
@@ -64,6 +65,9 @@ const ReactModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
                 </button>
               ))}
             </div>
+            <Code>
+              <>{`npm i -D react react-dom`}</>
+            </Code>
           </div>
         </Modal.Body>
         <Modal.Footer>
