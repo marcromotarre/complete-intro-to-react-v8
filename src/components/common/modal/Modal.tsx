@@ -5,6 +5,7 @@ import React, {
   ReactElement,
 } from "react";
 import { createPortal } from "react-dom";
+import CloseIcon from "../icons/close";
 
 const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   const elRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
@@ -44,7 +45,7 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
         className="fixed h-screen w-screen bg-black opacity-60"
       ></button>
       <div
-        className="fixed left-1/2 top-1/2  min-w-[600px] -translate-x-1/2 -translate-y-1/2
+        className="fixed left-1/2  top-1/2 h-[min(fit-content,90vh)] w-[min(600px,95%)] -translate-x-1/2 -translate-y-1/2
        rounded bg-white"
       >
         {header && React.cloneElement(header, { onClose, ...header.props })}
@@ -56,18 +57,25 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   );
 };
 
-import CloseIcon from "../icons/close";
-
 const ModalHeader = ({
   title,
   onClose,
+  icon,
 }: {
   title: string;
   onClose?: VoidFunction;
+  icon?: ReactElement;
 }) => {
   return (
     <div className="flex w-full items-center justify-between border-b border-gray-600 p-4">
-      <h1 className="text-xl font-semibold">{title}</h1>
+      <div
+        className={`grid ${
+          icon ? "grid-cols-[max-content_auto]" : "grid-cols-1"
+        } items-center justify-center gap-x-2`}
+      >
+        <div>{icon && icon}</div>
+        <h1 className="text-xl font-semibold">{title}</h1>
+      </div>
       <button
         className="group rounded-md p-2 hover:bg-robin-egg-blue"
         onClick={() => {
@@ -91,7 +99,7 @@ const ModalFooter = ({ children }: { children?: ReactElement }) => {
   return (
     <>
       <div className="w-full  border-b border-gray-600 p-4"></div>
-      <div className="w-full p-2">{children}</div>
+      <div className="w-full p-4">{children}</div>
     </>
   );
 };

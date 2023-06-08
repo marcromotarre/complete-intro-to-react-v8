@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import TechnologyInterface from "../interfaces/TechnologyInterface";
 import { useState } from "react";
 import Modal, { ModalProps } from "./common/modal/Modal";
+import ReactModal from "./mr-modals/ReactModal";
 
 const Technology = (technology: TechnologyInterface) => {
   const { name, icon, click } = technology;
@@ -19,21 +20,7 @@ const Technology = (technology: TechnologyInterface) => {
         <img className="h-14" src={icon} alt="some file" />
       </button>
       <p className="text-xs capitalize text-light-text">{name}</p>
-      {showModal && (
-        <Modal
-          onClose={() => {
-            setShowModal(false);
-          }}
-        >
-          <Modal.Header title="this is my modal"></Modal.Header>
-          <Modal.Body>
-            <p>2</p>
-          </Modal.Body>
-          <Modal.Footer>
-            <p>3</p>
-          </Modal.Footer>
-        </Modal>
-      )}
+      {showModal && <ReactModal />}
     </div>
   );
 };

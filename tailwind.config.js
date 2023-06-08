@@ -17,6 +17,11 @@ module.exports = {
         "dark-text": "#6E8A94",
         "robin-egg-blue": "#9398A5",
         "gray-600": "#E2E3E8",
+        denim: "#1487C5",
+        jade: "#00C171",
+        "dodger-blue": "#1DA9F4",
+        silver: "#BFBFBF",
+        "yellow-orange": "#FFBC3D",
       },
       width: {
         "max-app": "1000px",
