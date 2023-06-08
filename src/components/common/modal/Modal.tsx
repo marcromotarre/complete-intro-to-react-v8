@@ -17,6 +17,8 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   const ModalBodyMemo = React.memo(ModalBody);
   const ModalFooterMemo = React.memo(ModalFooter);
 
+  document.body.style.overflow = "hidden";
+
   useEffect(() => {
     const modalRoot = document.getElementById("modal");
     if (!modalRoot || !elRef.current) {
@@ -43,10 +45,17 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
     (modalComponent) => modalComponent.type.name === ModalFooterMemo.type.name
   );
 
+  const onCloseModal = () => {
+    document.body.style.overflow = "unset";
+    onClose();
+  };
+
   return createPortal(
     <div className="z-30">
       <button
-        onClick={() => onClose()}
+        onClick={() => {
+          onCloseModal();
+        }}
         className="fixed h-screen w-screen bg-black opacity-60"
       ></button>
       <div className="fixed left-1/2 top-1/2 w-[min(600px,95%)] -translate-x-1/2  -translate-y-1/2">
@@ -54,7 +63,11 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
           className="flex h-[100vh] max-h-[90vh] 
        flex-col rounded bg-white"
         >
-          {header && React.cloneElement(header, { onClose, ...header.props })}
+          {header &&
+            React.cloneElement(header, {
+              onClose: onCloseModal,
+              ...header.props,
+            })}
           {body && body}
           {footer && footer}
         </div>
