@@ -18,7 +18,12 @@ const JavascriptModal = ({
     {
       name: "Interesting Questions",
       color: "bg-silver",
-      navigate: "/rjavascripteact/questions",
+      navigate: "/javascripteact/questions",
+    },
+    {
+      name: "Icons",
+      color: "bg-dodger-blue",
+      navigate: "/javascripteact/icons",
     },
   ];
   return (
@@ -50,9 +55,6 @@ const JavascriptModal = ({
             </div>
           </div>
         </Modal.Body>
-        <Modal.Footer>
-          <div className="grid grid-cols-[max-content_auto] items-center gap-x-3"></div>
-        </Modal.Footer>
       </Modal>
     </>
   );

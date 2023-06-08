@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import ReactPage from "./pages/ReactPage";
 import ReduxPage from "./pages/ReduxPage";
+import GitPage from "./pages/GitPage";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/javascript" element={<JavascriptPage />} />
           <Route path="/react/:id" element={<ReactPage />} />
           <Route path="/redux/" element={<ReduxPage />} />
+          <Route path="/git/" element={<GitPage />} />
         </Routes>
       </Provider>
     </BrowserRouter>

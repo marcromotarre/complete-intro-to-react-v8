@@ -2,6 +2,7 @@ import ReactModal from "../components/mr-modals/ReactModal";
 import ReduxModal from "../components/mr-modals/ReduxModal";
 import JavascriptModal from "../components/mr-modals/JavascriptModal";
 import FigmaModal from "../components/mr-modals/FigmaModal";
+import GitModal from "../components/mr-modals/GitModal";
 
 export default [
   {
@@ -28,7 +29,7 @@ export default [
   {
     name: "git",
     icon: `icons/technologies/technology-git.svg`,
-    modal: <ReactModal />,
+    modal: <GitModal />,
   },
   {
     name: "redux",

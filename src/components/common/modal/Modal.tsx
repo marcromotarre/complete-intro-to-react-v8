@@ -46,9 +46,15 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   );
 
   const onCloseModal = () => {
-    document.body.style.overflow = "unset";
     onClose();
   };
+
+  useEffect(() => {
+    // component unmount
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, []);
 
   return createPortal(
     <div className="z-30">
@@ -58,7 +64,7 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
         }}
         className="fixed h-screen w-screen bg-black opacity-60"
       ></button>
-      <div className="fixed left-1/2 top-1/2 w-[min(600px,95%)] -translate-x-1/2  -translate-y-1/2">
+      <div className="fixed left-1/2 top-1/2 w-[min(600px,80%)] -translate-x-1/2  -translate-y-1/2">
         <div
           className="flex h-[max(fit-content,100vh)] max-h-[90vh] 
        flex-col rounded bg-white"
