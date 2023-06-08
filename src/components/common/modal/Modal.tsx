@@ -13,6 +13,9 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   if (!elRef.current) {
     elRef.current = document.createElement("div");
   }
+  const ModalHeaderMemo = React.memo(ModalHeader);
+  const ModalBodyMemo = React.memo(ModalHeader);
+  const ModalFooterMemo = React.memo(ModalHeader);
 
   useEffect(() => {
     const modalRoot = document.getElementById("modal");
@@ -28,7 +31,8 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   }, []);
 
   const header: ReactElement | undefined = children?.find(
-    (modalComponent: ReactElement) => modalComponent.type.name === "ModalHeader"
+    (modalComponent: ReactElement) =>
+      modalComponent.type.name === ModalHeaderMemo.type.name
   );
 
   const body: ReactElement | undefined = children?.find(
@@ -38,7 +42,7 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   const footer: ReactElement | undefined = children?.find(
     (modalComponent) => modalComponent.type.name === "ModalFooter"
   );
-  debugger;
+
   return createPortal(
     <div className="z-30">
       <button
@@ -68,7 +72,10 @@ const ModalHeader = ({
   icon?: ReactElement;
 }) => {
   return (
-    <div className="flex w-full items-center justify-between border-b border-gray-600 p-4">
+    <div
+      id="Modal.Header"
+      className="flex w-full items-center justify-between border-b border-gray-600 p-4"
+    >
       <Title icon={icon} title={title} />
 
       <button
