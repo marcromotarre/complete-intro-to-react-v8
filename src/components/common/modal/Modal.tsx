@@ -14,8 +14,8 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
     elRef.current = document.createElement("div");
   }
   const ModalHeaderMemo = React.memo(ModalHeader);
-  const ModalBodyMemo = React.memo(ModalHeader);
-  const ModalFooterMemo = React.memo(ModalHeader);
+  const ModalBodyMemo = React.memo(ModalBody);
+  const ModalFooterMemo = React.memo(ModalFooter);
 
   useEffect(() => {
     const modalRoot = document.getElementById("modal");
@@ -36,11 +36,11 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   );
 
   const body: ReactElement | undefined = children?.find(
-    (modalComponent) => modalComponent.type.name === "ModalBody"
+    (modalComponent) => modalComponent.type.name === ModalBodyMemo.type.name
   );
 
   const footer: ReactElement | undefined = children?.find(
-    (modalComponent) => modalComponent.type.name === "ModalFooter"
+    (modalComponent) => modalComponent.type.name === ModalFooterMemo.type.name
   );
 
   return createPortal(
