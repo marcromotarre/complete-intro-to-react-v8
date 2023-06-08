@@ -38,7 +38,7 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   const footer: ReactElement | undefined = children?.find(
     (modalComponent) => modalComponent.type.name === "ModalFooter"
   );
-
+  debugger;
   return createPortal(
     <div className="z-30">
       <button
@@ -49,7 +49,9 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
         className="fixed left-1/2  top-1/2 h-[min(fit-content,90vh)] w-[min(600px,95%)] -translate-x-1/2 -translate-y-1/2
        rounded bg-white"
       >
-        <p>hi</p>
+        {header && React.cloneElement(header, { onClose, ...header.props })}
+        {body && body}
+        {footer && footer}
       </div>
     </div>,
     elRef.current
