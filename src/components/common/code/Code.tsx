@@ -83,7 +83,7 @@ const Code = ({
         </button>
       </div>
 
-      <div className="grid grid-cols-[min-content_auto] gap-x-8 pl-4">
+      <div className="grid grid-cols-[min-content_auto] gap-x-8 p-2 pl-4">
         {code.map(({ line, tabs }, index: number) => (
           <React.Fragment key={index}>
             <div className="select-none text-right font-mono text-[#5E646E] sm:text-xs md:sm:text-xs lg:text-base">
