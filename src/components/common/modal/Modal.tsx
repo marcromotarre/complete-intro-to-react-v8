@@ -31,7 +31,7 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   }, []);
 
   const header: ReactElement | undefined = children?.find(
-    (modalComponent: ReactElement) =>
+    (modalComponent: JSX.Element) =>
       modalComponent.type.name === ModalHeaderMemo.type.name
   );
 
@@ -49,13 +49,15 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
         onClick={() => onClose()}
         className="fixed h-screen w-screen bg-black opacity-60"
       ></button>
-      <div
-        className="fixed left-1/2  top-1/2 h-[min(fit-content,90vh)] w-[min(600px,95%)] -translate-x-1/2 -translate-y-1/2
-       rounded bg-white"
-      >
-        {header && React.cloneElement(header, { onClose, ...header.props })}
-        {body && body}
-        {footer && footer}
+      <div className="fixed left-1/2 top-1/2 w-[min(600px,95%)] -translate-x-1/2  -translate-y-1/2">
+        <div
+          className="flex h-[100vh] max-h-[90vh] 
+       flex-col rounded bg-white"
+        >
+          {header && React.cloneElement(header, { onClose, ...header.props })}
+          {body && body}
+          {footer && footer}
+        </div>
       </div>
     </div>,
     elRef.current
@@ -94,15 +96,19 @@ const ModalHeader = ({
 };
 
 const ModalBody = ({ children }: { children?: ReactElement }) => {
-  return <>{children ? <div className="p-4">{children}</div> : <div></div>}</>;
+  return (
+    <div className="overflow-y-scroll">
+      {children ? <div className="p-4">{children}</div> : <div></div>}
+    </div>
+  );
 };
 
 const ModalFooter = ({ children }: { children?: ReactElement }) => {
   return (
-    <>
+    <div>
       <div className="w-full  border-b border-gray-600 p-4"></div>
       <div className="w-full p-4">{children}</div>
-    </>
+    </div>
   );
 };
 

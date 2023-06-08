@@ -28,6 +28,7 @@ const Code = ({
   };
 
   const tabsPadding = [
+    "pl-[0px]",
     "pl-[16px]",
     "pl-[32px]",
     "pl-[48px]",
@@ -69,7 +70,7 @@ const Code = ({
               )}
             >
               <div className="flex flex-wrap">
-                <p className="font-mono text-white">
+                <p className="font-mono text-white sm:text-xs md:sm:text-xs lg:text-base">
                   {line.split(" ").map((word: string, index: number) => (
                     <React.Fragment key={index}>
                       <span style={{ color: getColor(word) }}>

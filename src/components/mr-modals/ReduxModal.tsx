@@ -35,6 +35,70 @@ const ReduxModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
                 abstractions that simplify common Redux tasks, such as creating
                 actions, reducers, and the overall store setup.
               </p>
+              <p className="font-light text-dark-text">
+                By using React Redux, you can seamlessly integrate Redux into
+                your React applications. It provides a set of bindings that
+                enable React components to easily access and update the data
+                stored in the Redux store. This integration simplifies the
+                process of managing application state, enhances code
+                organization, and facilitates efficient rendering and updates in
+                React.
+              </p>
+              <p className="font-light text-dark-text">
+                Redux Toolkit is an official package developed by the Redux team
+                to streamline the usage of Redux and make it more
+                beginner-friendly. It provides utility functions and
+                abstractions that simplify common Redux tasks, such as creating
+                actions, reducers, and the overall store setup.
+              </p>
+              <p className="font-light text-dark-text">
+                By using React Redux, you can seamlessly integrate Redux into
+                your React applications. It provides a set of bindings that
+                enable React components to easily access and update the data
+                stored in the Redux store. This integration simplifies the
+                process of managing application state, enhances code
+                organization, and facilitates efficient rendering and updates in
+                React.
+              </p>
+              <p className="font-light text-dark-text">
+                Redux Toolkit is an official package developed by the Redux team
+                to streamline the usage of Redux and make it more
+                beginner-friendly. It provides utility functions and
+                abstractions that simplify common Redux tasks, such as creating
+                actions, reducers, and the overall store setup.
+              </p>
+              <p className="font-light text-dark-text">
+                By using React Redux, you can seamlessly integrate Redux into
+                your React applications. It provides a set of bindings that
+                enable React components to easily access and update the data
+                stored in the Redux store. This integration simplifies the
+                process of managing application state, enhances code
+                organization, and facilitates efficient rendering and updates in
+                React.
+              </p>
+              <p className="font-light text-dark-text">
+                Redux Toolkit is an official package developed by the Redux team
+                to streamline the usage of Redux and make it more
+                beginner-friendly. It provides utility functions and
+                abstractions that simplify common Redux tasks, such as creating
+                actions, reducers, and the overall store setup.
+              </p>
+              <p className="font-light text-dark-text">
+                By using React Redux, you can seamlessly integrate Redux into
+                your React applications. It provides a set of bindings that
+                enable React components to easily access and update the data
+                stored in the Redux store. This integration simplifies the
+                process of managing application state, enhances code
+                organization, and facilitates efficient rendering and updates in
+                React.
+              </p>
+              <p className="font-light text-dark-text">
+                Redux Toolkit is an official package developed by the Redux team
+                to streamline the usage of Redux and make it more
+                beginner-friendly. It provides utility functions and
+                abstractions that simplify common Redux tasks, such as creating
+                actions, reducers, and the overall store setup.
+              </p>
             </div>
             <div className="flex w-full justify-center">
               <button
