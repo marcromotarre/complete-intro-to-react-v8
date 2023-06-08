@@ -50,7 +50,6 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   };
 
   useEffect(() => {
-    // component unmount
     return () => {
       document.body.style.overflow = "unset";
     };

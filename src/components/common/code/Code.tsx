@@ -1,5 +1,7 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import classnames from "classnames";
+import JavascriptIcon from "../icons/JavascriptIcon";
+import CopyIcon from "../icons/CopyIcon";
 const Code = ({
   children,
   syntax,
@@ -7,14 +9,28 @@ const Code = ({
   children?: ReactElement;
   syntax?: string;
 }) => {
+  const [copyText, setCopyText] = useState("Copy Code");
   let lines: Array<string> = [];
   if (children?.props?.children) {
     lines = children?.props.children.split("\n");
     if (lines[0].trimStart() === "") lines.shift();
   }
 
+  useEffect(() => {
+    if (copyText === "Copied!") {
+      const timer = setTimeout(() => {
+        // Function to be triggered after two seconds
+        setCopyText("Copy Text");
+      }, 2000);
+
+      // Clean up the timer when the component unmounts or when the effect runs again
+      return () => clearTimeout(timer);
+    }
+  }, [copyText]);
+
   const onClickCopy = () => {
     navigator.clipboard.writeText(children?.props.children);
+    setCopyText("Copied!");
   };
 
   const countWhiteSpaces = (line: string): number => {
@@ -48,16 +64,26 @@ const Code = ({
     tabs: countWhiteSpaces(line) - minTabs,
   }));
   return (
-    <div className="grid grid-cols-1 rounded-sm bg-black p-3">
-      <div className="relative flex h-[12px]">
+    <div className="grid grid-cols-1 rounded-sm bg-black">
+      <div className="flex w-full items-center justify-between bg-[#2E2E38] p-2">
+        <div className="grid grid-cols-[min-content_min-content] items-center gap-x-2 pl-3 ">
+          <JavascriptIcon size={15} />
+          <p className="select-none text-xs font-light text-white">
+            Javascript
+          </p>
+        </div>
         <button
+          className="grid grid-cols-[min-content_max-content] items-center gap-x-2 pr-3 "
           onClick={() => onClickCopy()}
-          className="absolute right-0 rounded-md bg-white p-2 opacity-20 hover:opacity-100"
         >
-          <p className="select-none font-light">Copy Code</p>
+          <CopyIcon size={12} color="white" />
+          <p className="select-none text-xs font-light text-white">
+            {copyText}
+          </p>
         </button>
       </div>
-      <div className="grid grid-cols-[min-content_auto] gap-x-8">
+
+      <div className="grid grid-cols-[min-content_auto] gap-x-8 pl-4">
         {code.map(({ line, tabs }, index: number) => (
           <React.Fragment key={index}>
             <div className="select-none text-right font-mono text-[#5E646E] sm:text-xs md:sm:text-xs lg:text-base">
@@ -123,3 +149,46 @@ const getColor = (word: string) => {
       return "white";
   }
 };
+
+/*
+
+const chalk = require('chalk');
+
+function getColorForCharacter(char) {
+  if (/[A-Za-z]/.test(char)) {
+    return 'yellow';
+  } else if (/[0-9]/.test(char)) {
+    return 'green';
+  } else if (char === '(' || char === ')' || char === '{' || char === '}') {
+    return 'cyan';
+  } else if (char === '[' || char === ']') {
+    return 'magenta';
+  } else if (/[<>]/.test(char)) {
+    return 'blue';
+  } else {
+    return 'white';
+  }
+}
+
+function getColorizedTypeScriptCode(code) {
+  let colorizedCode = '';
+  for (let i = 0; i < code.length; i++) {
+    const char = code[i];
+    const color = getColorForCharacter(char);
+    colorizedCode += chalk[color](char);
+  }
+  return colorizedCode;
+}
+
+// Usage example:
+const fs = require('fs');
+
+// Read the TypeScript file content
+const fileContent = fs.readFileSync('path/to/your/file.ts', 'utf-8');
+
+// Get the colorized code
+const colorizedCode = getColorizedTypeScriptCode(fileContent);
+
+// Display the colorized code
+console.log(colorizedCode);
+*/
