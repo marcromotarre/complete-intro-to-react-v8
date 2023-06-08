@@ -47,13 +47,13 @@ const Code = ({
     tabs: countWhiteSpaces(line) - minTabs,
   }));
   return (
-    <div className="grid grid-cols-1 bg-black p-3">
-      <div className="relative h-4">
+    <div className="grid grid-cols-1 rounded-sm bg-black p-3">
+      <div className="relative flex h-[12px]">
         <button
           onClick={() => onClickCopy()}
           className="absolute right-0 rounded-md bg-white p-2 opacity-20 hover:opacity-100"
         >
-          <p className="font-light">Copy Code</p>
+          <p className="select-none font-light">Copy Code</p>
         </button>
       </div>
       <div className="grid grid-cols-[min-content_auto] gap-x-8">
