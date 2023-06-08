@@ -15,7 +15,7 @@ const ReactModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
     },
     { name: "Patterns", color: "bg-jade", navigate: "/react/patterns" },
     { name: "Testing", color: "bg-dodger-blue", navigate: "/react/testing" },
-    { name: "Hooks", color: "bg-silver", navigate: "/react/patterns" },
+    { name: "Hooks", color: "bg-silver", navigate: "/react/hooks" },
     {
       name: "Project Setup",
       color: "bg-yellow-orange",
