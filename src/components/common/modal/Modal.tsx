@@ -119,7 +119,7 @@ const ModalBody = ({ children }: { children?: ReactElement }) => {
 const ModalFooter = ({ children }: { children?: ReactElement }) => {
   return (
     <div>
-      <div className="w-full  border-b border-gray-600 p-4"></div>
+      <div className="w-full  border-b border-gray-600"></div>
       <div className="w-full p-4">{children}</div>
     </div>
   );
