@@ -1,3 +1,5 @@
+import React from "./ReactIcon";
+import Git from "./GitIcon";
 import Typescript from "./TypescriptIcon";
 import Javascript from "./JavascriptIcon";
 import Webpack from "./WebpackIcon";
@@ -10,6 +12,8 @@ import Cypress from "./CypressIcon";
 import Prisma from "./PrismaIcon";
 import Github from "./GithubIcon";
 
+export const ReactIcon = React;
+export const GitIcon = Git;
 export const TypescriptIcon = Typescript;
 export const JavascriptIcon = Javascript;
 export const WebpackIcon = Webpack;
@@ -23,6 +27,8 @@ export const PrismaIcon = Prisma;
 export const GithubIcon = Github;
 
 const Icons = {
+  ReactIcon: ReactIcon,
+  GitIcon: GitIcon,
   TypescriptIcon: TypescriptIcon,
   JavascriptIcon: JavascriptIcon,
   WebpackIcon: WebpackIcon,
