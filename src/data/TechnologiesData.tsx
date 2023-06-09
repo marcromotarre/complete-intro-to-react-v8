@@ -3,6 +3,8 @@ import ReduxModal from "../components/mr-modals/ReduxModal";
 import JavascriptModal from "../components/mr-modals/JavascriptModal";
 import FigmaModal from "../components/mr-modals/FigmaModal";
 import GitModal from "../components/mr-modals/GitModal";
+import TypescriptModal from "../components/mr-modals/TypescriptModal";
+import WebpackModal from "../components/mr-modals/WebpackModal";
 
 export default [
   {
@@ -24,7 +26,7 @@ export default [
   {
     name: "webpack",
     icon: `icons/technologies/technology-webpack.svg`,
-    modal: <ReactModal />,
+    modal: <WebpackModal />,
   },
   {
     name: "git",
@@ -45,7 +47,7 @@ export default [
   {
     name: "typescript",
     icon: `icons/technologies/technology-typescript.svg`,
-    modal: <ReactModal />,
+    modal: <TypescriptModal />,
   },
 
   {

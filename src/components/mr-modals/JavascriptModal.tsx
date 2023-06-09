@@ -31,10 +31,30 @@ const JavascriptModal = ({
       <Modal onClose={onClose}>
         <Modal.Header
           title="Javascript"
-          icon={<JavascriptIcon size={20} />}
+          icon={<JavascriptIcon size={30} />}
         ></Modal.Header>
         <Modal.Body>
           <div className="grid grid-cols-1 gap-y-5">
+            <p className="font-light text-black">
+              JavaScript is a high-level programming language primarily used for
+              creating interactive and dynamic web content. It is one of the
+              core technologies of the World Wide Web and is supported by all
+              modern web browsers.
+            </p>
+            <p className="font-light text-black">
+              JavaScript is a versatile language that allows developers to build
+              a wide range of applications, including web and mobile
+              applications, server-side development, game development, and more.
+              It provides the ability to add interactivity and responsiveness to
+              web pages by manipulating the Document Object Model (DOM), which
+              represents the structure and content of a web page.
+            </p>
+            <p className="font-light text-black">
+              JavaScript is an interpreted language, meaning that it doesn't
+              require explicit compilation before execution. It is executed
+              directly by the web browser or a JavaScript engine in other
+              environments.
+            </p>
             <div className="flex flex-wrap justify-start">
               {buttons.map((button, index) => (
                 <button
