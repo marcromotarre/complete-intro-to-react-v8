@@ -8,6 +8,7 @@ import ReactPage from "./pages/ReactPage";
 import ReduxPage from "./pages/ReduxPage";
 import GitPage from "./pages/GitPage";
 import ReactHooksPage from "./pages/ReactHooks";
+import ReactMyComponents from "./pages/ReactMyComponents";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/javascript" element={<JavascriptPage />} />
           <Route path="/react/:id" element={<ReactPage />} />
           <Route path="/react/hooks" element={<ReactHooksPage />} />
+          <Route path="/react/my-components" element={<ReactMyComponents />} />
           <Route path="/redux/" element={<ReduxPage />} />
           <Route path="/git/" element={<GitPage />} />
         </Routes>

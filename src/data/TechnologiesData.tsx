@@ -5,6 +5,10 @@ import FigmaModal from "../components/mr-modals/FigmaModal";
 import GitModal from "../components/mr-modals/GitModal";
 import TypescriptModal from "../components/mr-modals/TypescriptModal";
 import WebpackModal from "../components/mr-modals/WebpackModal";
+import NextModal from "../components/mr-modals/NextModal";
+import JestModal from "../components/mr-modals/JestModal";
+import NodeModal from "../components/mr-modals/NodeModal";
+import CypressModal from "../components/mr-modals/CypressModal";
 
 export default [
   {
@@ -16,12 +20,12 @@ export default [
   {
     name: "nextjs",
     icon: `icons/technologies/technology-nextjs.svg`,
-    modal: <ReactModal />,
+    modal: <NextModal />,
   },
   {
     name: "nodejs",
     icon: `icons/technologies/technology-nodejs.svg`,
-    modal: <ReactModal />,
+    modal: <NodeModal />,
   },
   {
     name: "webpack",
@@ -63,13 +67,13 @@ export default [
   {
     name: "cypress",
     icon: `icons/technologies/technology-cypress.svg`,
-    modal: <ReactModal />,
+    modal: <CypressModal />,
   },
 
   {
     name: "jest",
     icon: `icons/technologies/technology-jest.svg`,
-    modal: <ReactModal />,
+    modal: <JestModal />,
   },
   {
     name: "yarn",

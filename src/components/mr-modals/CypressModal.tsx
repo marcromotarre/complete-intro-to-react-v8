@@ -1,14 +1,14 @@
 import Modal from "../common/modal/Modal";
 import InfoIcon from "../common/icons/InfoIcon";
-import ReduxIcon from "../common/icons/ReduxIcon";
+import { CypressIcon } from "../common/icons";
 
-const ReduxModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
+const CypressModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
   return (
     <>
       <Modal onClose={onClose}>
         <Modal.Header
-          title="Redux"
-          icon={<ReduxIcon size={30} />}
+          title="Cypress"
+          icon={<CypressIcon size={30} />}
         ></Modal.Header>
         <Modal.Body>
           <div className="grid grid-cols-1 gap-y-5">
@@ -38,4 +38,4 @@ const ReduxModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
   );
 };
 
-export default ReduxModal;
+export default CypressModal;

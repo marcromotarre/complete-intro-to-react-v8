@@ -1,6 +1,7 @@
 const Demo = ({
   color = "black",
   size = 20,
+  className = "",
 }: {
   color?: string;
   size?: number;
@@ -8,6 +9,7 @@ const Demo = ({
 }) => {
   return (
     <svg
+      className={className}
       width={size}
       height={size * 1.14516129032}
       viewBox="0 0 62 71"

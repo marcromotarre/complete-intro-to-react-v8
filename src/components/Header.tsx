@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import me from "../data/MeData";
-
+import PortfolioImage from "../images/portfolio.jpg";
 const Header = () => {
   const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const Header = () => {
       <img
         alt="me"
         className=" mr-4 h-10 w-10 justify-self-end rounded-full"
-        src={`images/portfolio.jpg`}
+        src={PortfolioImage}
       ></img>
     </button>
   );
