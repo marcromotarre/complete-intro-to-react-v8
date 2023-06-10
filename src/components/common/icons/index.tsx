@@ -1,4 +1,7 @@
 import React from "./ReactIcon";
+import Redux from "./ReduxIcon";
+import Figma from "./FigmaIcon";
+import Recoil from "./RecoilIcon";
 import Git from "./GitIcon";
 import Typescript from "./TypescriptIcon";
 import Javascript from "./JavascriptIcon";
@@ -13,6 +16,9 @@ import Prisma from "./PrismaIcon";
 import Github from "./GithubIcon";
 
 export const ReactIcon = React;
+export const ReduxIcon = Redux;
+export const FigmaIcon = Figma;
+export const RecoilIcon = Recoil;
 export const GitIcon = Git;
 export const TypescriptIcon = Typescript;
 export const JavascriptIcon = Javascript;
@@ -28,6 +34,9 @@ export const GithubIcon = Github;
 
 const Icons = {
   ReactIcon: ReactIcon,
+  ReduxIcon: ReduxIcon,
+  FigmaIcon: FigmaIcon,
+  RecoilIcon: RecoilIcon,
   GitIcon: GitIcon,
   TypescriptIcon: TypescriptIcon,
   JavascriptIcon: JavascriptIcon,

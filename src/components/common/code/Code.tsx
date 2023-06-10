@@ -5,9 +5,11 @@ import CopyIcon from "../icons/CopyIcon";
 const Code = ({
   children,
   syntax,
+  noHeader = false,
 }: {
   children?: ReactElement;
   syntax?: string;
+  noHeader?: boolean;
 }) => {
   const [copyText, setCopyText] = useState("Copy Code");
   let lines: Array<string> = [];
@@ -39,7 +41,6 @@ const Code = ({
 
   const getMinTab = (lines: Array<string>): number => {
     const tabsInLines = lines.map((line) => countWhiteSpaces(line));
-    console.log(tabsInLines);
     return Math.min.apply(Math, tabsInLines);
   };
 
@@ -65,24 +66,25 @@ const Code = ({
   }));
   return (
     <div className="grid grid-cols-1 rounded-sm bg-black">
-      <div className="flex w-full items-center justify-between bg-[#2E2E38] p-2">
-        <div className="grid grid-cols-[min-content_min-content] items-center gap-x-2 pl-3 ">
-          <JavascriptIcon size={15} />
-          <p className="select-none text-xs font-light text-white">
-            Javascript
-          </p>
+      {!noHeader && (
+        <div className="flex w-full items-center justify-between bg-[#2E2E38] p-2">
+          <div className="grid grid-cols-[min-content_min-content] items-center gap-x-2 pl-3 ">
+            <JavascriptIcon size={15} />
+            <p className="select-none text-xs font-light text-white">
+              Javascript
+            </p>
+          </div>
+          <button
+            className="grid grid-cols-[min-content_max-content] items-center gap-x-2 pr-3 "
+            onClick={() => onClickCopy()}
+          >
+            <CopyIcon size={12} color="white" />
+            <p className="select-none text-xs font-light text-white">
+              {copyText}
+            </p>
+          </button>
         </div>
-        <button
-          className="grid grid-cols-[min-content_max-content] items-center gap-x-2 pr-3 "
-          onClick={() => onClickCopy()}
-        >
-          <CopyIcon size={12} color="white" />
-          <p className="select-none text-xs font-light text-white">
-            {copyText}
-          </p>
-        </button>
-      </div>
-
+      )}
       <div className="grid grid-cols-[min-content_auto] gap-x-8 p-2 pl-4">
         {code.map(({ line, tabs }, index: number) => (
           <React.Fragment key={index}>

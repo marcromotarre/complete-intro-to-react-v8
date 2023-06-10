@@ -1,5 +1,5 @@
 const ReduxIcon = ({
-  color = "black",
+  color = "#764ABC",
   size = 20,
   className = "",
 }: {

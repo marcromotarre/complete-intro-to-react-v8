@@ -1,6 +1,4 @@
 const FigmaIcon = ({
-  width,
-  height,
   color,
   colors = {
     topLeft: "#FF4D12",
@@ -12,8 +10,6 @@ const FigmaIcon = ({
   size = 20,
   className = "",
 }: {
-  width?: number;
-  height?: number;
   color?: string;
   colors?: {
     topLeft: string;
@@ -26,19 +22,12 @@ const FigmaIcon = ({
   className?: string;
 }) => {
   const ASPECT_RATIO_WIDTH_HEIGHT = 1.36842105263;
-  const ASPECT_RATIO_HEIGHT_WIDTH = 0.73076923076;
 
   return (
     <svg
       className={className}
-      width={width ? width : height ? height * ASPECT_RATIO_HEIGHT_WIDTH : size}
-      height={
-        height
-          ? height
-          : width
-          ? width * ASPECT_RATIO_WIDTH_HEIGHT
-          : size * ASPECT_RATIO_WIDTH_HEIGHT
-      }
+      width={size / ASPECT_RATIO_WIDTH_HEIGHT}
+      height={size}
       viewBox="0 0 38 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

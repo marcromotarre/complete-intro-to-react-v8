@@ -1,10 +1,10 @@
-import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Title from "../components/common/Title";
-import ComponentsData from "../data/ComponentsData";
 import classnames from "classnames";
 import {
   ReactIcon,
+  ReduxIcon,
+  FigmaIcon,
   GitIcon,
   TypescriptIcon,
   JavascriptIcon,
@@ -17,27 +17,31 @@ import {
   CypressIcon,
   PrismaIcon,
   GithubIcon,
+  RecoilIcon,
 } from "../components/common/icons";
-import { cloneElement } from "react";
+import { cloneElement, useState } from "react";
 import Code from "../components/common/code/Code";
-const ReactMyComponentsIcon = () => {
-  const navigate = useNavigate();
 
+const ReactMyComponentsIcon = () => {
   const icons = [
-    { icon: <ReactIcon />, size: 40 },
-    { icon: <GitIcon />, size: 40 },
-    { icon: <TypescriptIcon />, size: 40 },
-    { icon: <JavascriptIcon />, size: 40 },
-    { icon: <WebpackIcon />, size: 40 },
-    { icon: <NextIcon />, size: 40 },
-    { icon: <JestIcon />, size: 40 },
-    { icon: <NodeIcon />, size: 40 },
-    { icon: <YarnIcon />, size: 40 },
-    { icon: <NpmIcon />, size: 40 },
-    { icon: <CypressIcon />, size: 40 },
-    { icon: <PrismaIcon />, size: 40 },
-    { icon: <GithubIcon />, size: 40 },
+    { component: ReactIcon, icon: <ReactIcon />, size: 40 },
+    { component: GitIcon, icon: <GitIcon />, size: 40 },
+    { component: ReduxIcon, icon: <ReduxIcon />, size: 40 },
+    { component: FigmaIcon, icon: <FigmaIcon />, size: 40 },
+    { component: RecoilIcon, icon: <RecoilIcon />, size: 40 },
+    { component: TypescriptIcon, icon: <TypescriptIcon />, size: 40 },
+    { component: JavascriptIcon, icon: <JavascriptIcon />, size: 40 },
+    { component: WebpackIcon, icon: <WebpackIcon />, size: 40 },
+    { component: NextIcon, icon: <NextIcon />, size: 40 },
+    { component: JestIcon, icon: <JestIcon />, size: 40 },
+    { component: NodeIcon, icon: <NodeIcon />, size: 40 },
+    { component: YarnIcon, icon: <YarnIcon />, size: 40 },
+    { component: NpmIcon, icon: <NpmIcon />, size: 40 },
+    { component: CypressIcon, icon: <CypressIcon />, size: 40 },
+    { component: PrismaIcon, icon: <PrismaIcon />, size: 40 },
+    { component: GithubIcon, icon: <GithubIcon />, size: 40 },
   ];
+
   return (
     <div className="">
       <Header />
@@ -83,13 +87,85 @@ export default Icons;
         <Code>
           <div>{`import { NpmIcon, GitIcon, ReactIcon } from "../components/common/icons";`}</div>
         </Code>
-        <p className="font-light">
-          {`Let's paint all this icons click on one of them and you will see that is possible to edit them. You will be able to see also the Typescript code of these icons.`}
-        </p>
-        <div className="flex flex-wrap items-center justify-start">
+        <p className="font-light">{`You can edit some Icon properties such as colors and size`}</p>
+        <div className="display grid grid-cols-1 gap-y-4">
+          <div className="display grid grid-cols-[50px_auto]">
+            <YarnIcon className="align-self-center justify-self-center " />
+            <Code noHeader>
+              <>{`<YarnIcon />`}</>
+            </Code>
+          </div>
+          <div className="display grid grid-cols-[50px_auto] ">
+            <YarnIcon size={30} />
+            <Code noHeader>
+              <>{`<YarnIcon />`}</>
+            </Code>
+          </div>
+          <div className="display grid grid-cols-[50px_auto] ">
+            <YarnIcon size={40} />
+            <Code noHeader>
+              <>{`<YarnIcon size={30} />`}</>
+            </Code>
+          </div>
+          <div className="display grid grid-cols-[50px_auto] ">
+            <YarnIcon size={40} catColor={"yellow"} />
+            <Code noHeader>
+              <>{`<YarnIcon catColor={"yellow"} size={30} />`}</>
+            </Code>
+          </div>
+          <div className="display grid grid-cols-[50px_auto] ">
+            <YarnIcon size={40} color={"green"} />
+            <Code noHeader>
+              <>{`<YarnIcon size={30} color={"green"} />`}</>
+            </Code>
+          </div>
+          <div className="display grid grid-cols-[50px_auto] ">
+            <YarnIcon size={40} circleColor={"transparent"} />
+            <Code noHeader>
+              <>{`<YarnIcon size={30} circleColor={"transparent"}  />`}</>
+            </Code>
+          </div>
+        </div>
+        <p className="font-light">Select an Icon and edit its props</p>
+        <div className="flex max-w-[100vw] flex-shrink items-center justify-start overflow-x-scroll">
           {icons.map(({ icon, size }, index) => (
-            <div key={index} className="p-3">
+            <div
+              key={index}
+              className="m-2 flex
+              h-[60px]
+              w-[60px]
+              items-center
+              justify-center p-2"
+            >
               {cloneElement(icon, { size })}
+            </div>
+          ))}
+        </div>
+        <div className="flex max-w-[100vw] flex-shrink items-center justify-start overflow-x-scroll">
+          {icons.map(({ icon, size }, index) => (
+            <div
+              key={index}
+              className="m-2 flex
+                h-[60px]
+                w-[60px]
+                items-center
+                justify-center rounded-lg bg-[#326EAC] p-2"
+            >
+              {cloneElement(icon, { size, color: "white" })}
+            </div>
+          ))}
+        </div>
+        <div className="flex max-w-[100vw] flex-shrink items-center justify-start overflow-x-scroll">
+          {icons.map(({ icon, size }, index) => (
+            <div
+              key={index}
+              className="m-2 flex
+                h-[60px]
+                w-[60px]
+                items-center
+                justify-center  p-2"
+            >
+              {cloneElement(icon, { size, color: "black" })}
             </div>
           ))}
         </div>
