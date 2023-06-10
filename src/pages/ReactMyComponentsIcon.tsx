@@ -85,48 +85,62 @@ export default Icons;
           So if you want to use an icon just need to import them
         </p>
         <Code>
-          <div>{`import { NpmIcon, GitIcon, ReactIcon } from "../components/common/icons";`}</div>
+          <div>{`import { YarnIcon } from "../components/common/icons";`}</div>
         </Code>
         <p className="font-light">{`You can edit some Icon properties such as colors and size`}</p>
-        <div className="display grid grid-cols-1 gap-y-4">
-          <div className="display grid grid-cols-[50px_auto]">
-            <YarnIcon className="align-self-center justify-self-center " />
+        <div className="display grid grid-cols-1 gap-y-5">
+          <div className="display grid grid-cols-[80px_auto]">
+            <YarnIcon className="align-self-center self-center justify-self-center" />
             <Code noHeader>
               <>{`<YarnIcon />`}</>
             </Code>
           </div>
-          <div className="display grid grid-cols-[50px_auto] ">
-            <YarnIcon size={30} />
+          <div className="display grid grid-cols-[80px_auto]">
+            <YarnIcon className="self-center justify-self-center" size={30} />
             <Code noHeader>
               <>{`<YarnIcon />`}</>
             </Code>
           </div>
-          <div className="display grid grid-cols-[50px_auto] ">
-            <YarnIcon size={40} />
+          <div className="display grid grid-cols-[80px_auto]">
+            <YarnIcon className="self-center justify-self-center" size={40} />
             <Code noHeader>
               <>{`<YarnIcon size={30} />`}</>
             </Code>
           </div>
-          <div className="display grid grid-cols-[50px_auto] ">
-            <YarnIcon size={40} catColor={"yellow"} />
+          <div className="display grid grid-cols-[80px_auto]">
+            <YarnIcon
+              className="self-center justify-self-center"
+              size={40}
+              catColor={"yellow"}
+            />
             <Code noHeader>
               <>{`<YarnIcon catColor={"yellow"} size={30} />`}</>
             </Code>
           </div>
-          <div className="display grid grid-cols-[50px_auto] ">
-            <YarnIcon size={40} color={"green"} />
+          <div className="display grid grid-cols-[80px_auto]">
+            <YarnIcon
+              className="self-center justify-self-center"
+              size={40}
+              color={"green"}
+            />
             <Code noHeader>
               <>{`<YarnIcon size={30} color={"green"} />`}</>
             </Code>
           </div>
-          <div className="display grid grid-cols-[50px_auto] ">
-            <YarnIcon size={40} circleColor={"transparent"} />
+          <div className="display grid grid-cols-[80px_auto]">
+            <YarnIcon
+              className="self-center justify-self-center"
+              size={40}
+              circleColor={"transparent"}
+            />
             <Code noHeader>
               <>{`<YarnIcon size={30} circleColor={"transparent"}  />`}</>
             </Code>
           </div>
         </div>
-        <p className="font-light">Select an Icon and edit its props</p>
+        <p className="font-light">
+          In a simple way you can edit all icons props
+        </p>
         <div className="flex max-w-[100vw] flex-shrink items-center justify-start overflow-x-scroll">
           {icons.map(({ icon, size }, index) => (
             <div
@@ -166,6 +180,20 @@ export default Icons;
                 justify-center  p-2"
             >
               {cloneElement(icon, { size, color: "black" })}
+            </div>
+          ))}
+        </div>
+        <div className="flex max-w-[100vw] flex-shrink items-center justify-start overflow-x-scroll">
+          {icons.map(({ icon, size }, index) => (
+            <div
+              key={index}
+              className="m-2 flex
+                h-[60px]
+                w-[60px]
+                items-center
+                justify-center  p-2"
+            >
+              {cloneElement(icon, { size, color: "#326EAC" })}
             </div>
           ))}
         </div>
