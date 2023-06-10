@@ -10,6 +10,7 @@ import GitPage from "./pages/GitPage";
 import ReactHooksPage from "./pages/ReactHooks";
 import ReactMyComponents from "./pages/ReactMyComponents";
 import ReactMyComponentsIcon from "./pages/ReactMyComponentsIcon";
+import ReactMyComponentsModal from "./pages/ReactMyComponentsModal";
 
 const App = () => {
   return (
@@ -24,6 +25,10 @@ const App = () => {
           <Route
             path="/react/my-components/icon"
             element={<ReactMyComponentsIcon />}
+          />
+          <Route
+            path="/react/my-components/modal"
+            element={<ReactMyComponentsModal />}
           />
           <Route path="/redux/" element={<ReduxPage />} />
           <Route path="/git/" element={<GitPage />} />

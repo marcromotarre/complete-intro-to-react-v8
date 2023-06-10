@@ -17,16 +17,16 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   const ModalBodyMemo = React.memo(ModalBody);
   const ModalFooterMemo = React.memo(ModalFooter);
 
-  document.body.style.overflow = "hidden";
-
   useEffect(() => {
     const modalRoot = document.getElementById("modal");
     if (!modalRoot || !elRef.current) {
       return;
     }
+    document.body.style.overflow = "hidden";
     modalRoot.appendChild(elRef.current);
     return () => {
       if (elRef.current) {
+        document.body.style.overflow = "unset";
         modalRoot.removeChild(elRef.current);
       }
     };
@@ -48,12 +48,6 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   const onCloseModal = () => {
     onClose();
   };
-
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, []);
 
   return createPortal(
     <div className="z-30">

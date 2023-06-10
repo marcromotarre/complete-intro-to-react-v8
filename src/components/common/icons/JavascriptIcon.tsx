@@ -5,6 +5,7 @@ const JavascriptIcon = ({
   sColor = "black",
   backgroundColor = "#FFDF00",
   size = 20,
+  className = "",
 }: {
   color?: string;
   lettersColor?: string;
@@ -16,6 +17,7 @@ const JavascriptIcon = ({
 }) => {
   return (
     <svg
+      className={className}
       width={size}
       height={size}
       viewBox="0 0 84 84"
