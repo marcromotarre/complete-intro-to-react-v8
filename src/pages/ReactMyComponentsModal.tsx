@@ -98,21 +98,24 @@ const ReactMyComponentsModal = () => {
           I created a general modal to use in all the application.
         </p>
         <p className="font-light">Here you have some cool examples</p>
-        <div className="flex max-w-[100vw] flex-shrink items-center justify-start overflow-x-scroll">
-          {modals.map((modal, index) => (
-            <button
-              onClick={() => {
-                setModalIndex(index);
-                setIsModalOpen(true);
-              }}
-              key={index}
-              className="mr-4 flex min-w-fit items-center justify-center rounded-md bg-blue-400 p-3"
-            >
-              {cloneElement(modal.icon, {})}
-              <p className="ml-2 text-white">{modal.name}</p>
-            </button>
-          ))}
+        <div className="relative h-[50px]">
+          <div className="absolute left-[-32px] flex max-w-[100vw] flex-shrink items-center justify-start overflow-x-scroll pl-[32px]">
+            {modals.map((modal, index) => (
+              <button
+                onClick={() => {
+                  setModalIndex(index);
+                  setIsModalOpen(true);
+                }}
+                key={index}
+                className="mr-4 flex min-w-fit items-center justify-center rounded-md bg-blue-400 p-3"
+              >
+                {cloneElement(modal.icon, {})}
+                <p className="ml-2 text-white">{modal.name}</p>
+              </button>
+            ))}
+          </div>
         </div>
+
         {isModalOpen &&
           cloneElement(modals[modalIndex].component, {
             onClose: () => {

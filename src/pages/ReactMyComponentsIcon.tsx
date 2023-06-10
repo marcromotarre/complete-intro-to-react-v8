@@ -181,66 +181,68 @@ export default YarnIcon;
         <p className="font-light">
           In a simple way you can edit all icons props
         </p>
-        <div className="overflow-x-scroll">
-          <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
-            {icons.map(({ icon, size }, index) => (
-              <div
-                key={index}
-                className="m-2 flex
+        <div className="relative h-[300px] max-w-[100vw]">
+          <div className="absolute left-[-32px] max-w-[100vw] overflow-x-scroll pl-[32px] ">
+            <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
+              {icons.map(({ icon, size }, index) => (
+                <div
+                  key={index}
+                  className="m-2 flex
               h-[60px]
               w-[60px]
               min-w-[60px]
               items-center
               justify-center p-2"
-              >
-                {cloneElement(icon, { size })}
-              </div>
-            ))}
-          </div>
-          <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
-            {icons.map(({ icon, size }, index) => (
-              <div
-                key={index}
-                className="m-2 flex
+                >
+                  {cloneElement(icon, { size })}
+                </div>
+              ))}
+            </div>
+            <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
+              {icons.map(({ icon, size }, index) => (
+                <div
+                  key={index}
+                  className="m-2 flex
                 h-[60px]
                 w-[60px]
                 min-w-[60px]
                 items-center
                 justify-center rounded-lg bg-[#326EAC] p-2"
-              >
-                {cloneElement(icon, { size, color: "white" })}
-              </div>
-            ))}
-          </div>
-          <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
-            {icons.map(({ icon, size }, index) => (
-              <div
-                key={index}
-                className="m-2 flex
+                >
+                  {cloneElement(icon, { size, color: "white" })}
+                </div>
+              ))}
+            </div>
+            <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
+              {icons.map(({ icon, size }, index) => (
+                <div
+                  key={index}
+                  className="m-2 flex
                 h-[60px]
                 w-[60px]
                 min-w-[60px]
                 items-center
                 justify-center  p-2"
-              >
-                {cloneElement(icon, { size, color: "black" })}
-              </div>
-            ))}
-          </div>
-          <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
-            {icons.map(({ icon, size }, index) => (
-              <div
-                key={index}
-                className="m-2 flex
+                >
+                  {cloneElement(icon, { size, color: "black" })}
+                </div>
+              ))}
+            </div>
+            <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
+              {icons.map(({ icon, size }, index) => (
+                <div
+                  key={index}
+                  className="m-2 flex
                 h-[60px]
                 w-[60px]
                 min-w-[60px]
                 items-center
                 justify-center  p-2"
-              >
-                {cloneElement(icon, { size, color: "#326EAC" })}
-              </div>
-            ))}
+                >
+                  {cloneElement(icon, { size, color: "#326EAC" })}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
