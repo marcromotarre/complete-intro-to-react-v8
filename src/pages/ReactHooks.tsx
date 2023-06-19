@@ -1,9 +1,25 @@
+import { useState } from "react";
 import Header from "../components/Header";
 import Title from "../components/common/Title";
 import Code from "../components/common/code/Code";
 import ReactIcon from "../components/common/icons/ReactIcon";
+import {
+  expensiveMathOperationCode,
+  expensiveMathOperationUsingMemo,
+  expensiveMathOperationWithoutUsingMemo,
+  useMemoExample,
+} from "../data/codes/UseMemoCode";
+import {
+  useRefExampleCode,
+  useRefInicializerCode,
+  useRefManipulatingDOMCode,
+} from "../data/codes/UseRefCode";
+import useStateExampleCode from "../data/codes/UseStateExampleCode";
+import useStateInicialitzationCode from "../data/codes/UseStateInicialitzationCode";
+import UseMemoModal from "../components/mr-modals/UseMemoModal";
 
 const ReactHooksPage = () => {
+  const [useMemoModalState, setUseMemoModalState] = useState(false);
   return (
     <div className="">
       <Header />
@@ -29,38 +45,10 @@ const ReactHooksPage = () => {
           state. When the value is updated component rerenders.
         </p>
         <Code>
-          <div>{`
-          const [count, setCount] = useState(0);
-          setCount(4)`}</div>
+          <div>{useStateInicialitzationCode}</div>
         </Code>
         <Code>
-          <>{`
-import React, { useState } from 'react';
-
-function Counter() {
-// Declare a state variable called "count" and its initial value as 0
-const [count, setCount] = useState(0);
-
-// Event handler for incrementing the count
-const increment = () => {
-  setCount(count + 1);
-};
-
-// Event handler for decrementing the count
-const decrement = () => {
-  setCount(count - 1);
-};
-
-return (
-  <div>
-    <h2>Count: {count}</h2>
-    <button onClick={increment}>Increment</button>
-    <button onClick={decrement}>Decrement</button>
-  </div>
-);
-}
-
-export default Counter;`}</>
+          <>{useStateExampleCode}</>
         </Code>
 
         <p>useEffect</p>
@@ -88,6 +76,85 @@ export default Counter;`}</>
             };
           }, []);;`}</>
         </Code>
+
+        <p>useRef</p>
+        <p className="font-light">
+          useRef is a React Hook that lets you reference a value that is not
+          needed for rendering
+        </p>
+        <Code>
+          <>{useRefInicializerCode}</>
+        </Code>
+        <p className="font-light">
+          This component uses a ref to keep track of how many times the button
+          was clicked. Note that it is okay to use a ref instead of state here
+          because the click count is only read and written in an event handler.
+        </p>
+        <Code>
+          <>{useRefExampleCode}</>
+        </Code>
+        <p className="font-light">
+          The most common use of useRef is to manipulate DOM elements. We gonna
+          use useRef to setup a variable and then with the ref prop we are going
+          to set the value of that variable.
+        </p>
+        <p className="font-light">
+          In this example, clicking the button will focus the input:
+        </p>
+        <Code>
+          <>{useRefManipulatingDOMCode}</>
+        </Code>
+        <p>useCallback</p>
+        <p className="font-light">
+          useCallback is a React Hook that lets you cache a function definition
+          between re-renders.
+        </p>
+        <p>useMemo</p>
+        <p className="font-light">
+          useMemo is a React Hook that lets you cache the result of a
+          calculation between re-renders.
+        </p>
+        <p className="font-light">
+          Imagine that we have an expensive math operation:
+        </p>
+        <Code>
+          <>{expensiveMathOperationCode}</>
+        </Code>
+        <p className="font-light">
+          We can use useMemo to cache the result of that operation and when the
+          component rerenders will use the cached value instead of call the
+          expensiveMathOperationAgain
+        </p>
+        <Code>
+          <>{useMemoExample}</>
+        </Code>
+        <p className="font-light">
+          You can try the same code without using useMemo and it will call the
+          function in each single render
+        </p>
+        <p className="font-light">instead of this:</p>
+        <Code>
+          <>{expensiveMathOperationUsingMemo}</>
+        </Code>
+        <p className="font-light">write this:</p>
+        <Code>
+          <>{expensiveMathOperationWithoutUsingMemo}</>
+        </Code>
+        <button
+          onClick={() => {
+            setUseMemoModalState(true);
+          }}
+          className="grid w-max grid-cols-[auto_auto] items-center gap-x-3 rounded-md bg-[#F05033] p-3"
+        >
+          <p className="text-white">See useMemo Example</p>
+        </button>
+        {useMemoModalState && (
+          <UseMemoModal
+            onClose={() => {
+              setUseMemoModalState(false);
+            }}
+          />
+        )}
       </div>
     </div>
   );
