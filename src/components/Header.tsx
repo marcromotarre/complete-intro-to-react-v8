@@ -10,7 +10,7 @@ const Header = () => {
         onClick={() => {
           navigate("/");
         }}
-        className="fixed grid h-14 w-full grid-cols-3 items-center bg-main"
+        className="grid h-full w-full grid-cols-3 items-center bg-main"
       >
         <div className="relative -bottom-[7px] ml-4 flex self-end">
           <h1 className="text-2xl font-bold text-white">{me.name}</h1>
@@ -27,7 +27,6 @@ const Header = () => {
           src={PortfolioImage}
         ></img>
       </button>
-      <div className="h-14"></div>
     </>
   );
 };
