@@ -11,6 +11,8 @@ import ReactHooksPage from "./pages/ReactHooks";
 import ReactMyComponents from "./pages/ReactMyComponents";
 import ReactMyComponentsIcon from "./pages/ReactMyComponentsIcon";
 import ReactMyComponentsModal from "./pages/ReactMyComponentsModal";
+import Page from "./pages/Page";
+import Layout from "./pages/Layout";
 
 const App = () => {
   return (
@@ -18,20 +20,25 @@ const App = () => {
       <Provider store={store}>
         <Routes>
           <Route path="/" element={<PortfolioPage />} />
-          <Route path="/javascript" element={<JavascriptPage />} />
-          <Route path="/react/:id" element={<ReactPage />} />
-          <Route path="/react/hooks" element={<ReactHooksPage />} />
-          <Route path="/react/my-components" element={<ReactMyComponents />} />
-          <Route
-            path="/react/my-components/icon"
-            element={<ReactMyComponentsIcon />}
-          />
-          <Route
-            path="/react/my-components/modal"
-            element={<ReactMyComponentsModal />}
-          />
-          <Route path="/redux/" element={<ReduxPage />} />
-          <Route path="/git/" element={<GitPage />} />
+          <Route element={<Layout />}>
+            <Route path="/javascript" element={<JavascriptPage />} />
+            <Route path="/react/:id" element={<ReactPage />} />
+            <Route path="/react/hooks" element={<ReactHooksPage />} />
+            <Route
+              path="/react/my-components"
+              element={<ReactMyComponents />}
+            />
+            <Route
+              path="/react/my-components/icon"
+              element={<ReactMyComponentsIcon />}
+            />
+            <Route
+              path="/react/my-components/modal"
+              element={<ReactMyComponentsModal />}
+            />
+            <Route path="/redux/" element={<ReduxPage />} />
+            <Route path="/git/" element={<GitPage />} />
+          </Route>
         </Routes>
       </Provider>
     </BrowserRouter>

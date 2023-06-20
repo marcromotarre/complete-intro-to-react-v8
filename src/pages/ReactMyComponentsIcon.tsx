@@ -43,17 +43,15 @@ const ReactMyComponentsIcon = () => {
   ];
 
   return (
-    <div className="">
-      <Header />
-      <div className="grid grid-cols-1 gap-y-4 p-8">
-        <Title icon={<ReactIcon size={30} />} title="React My Components" />
-        <p className="text-xl">Icon</p>
-        <p className="font-light">
-          In order to have all icons grouped by a single import I created an
-          index file and export them
-        </p>
-        <Code>
-          <div>{`
+    <div className="grid grid-cols-1 gap-y-4 p-8">
+      <Title icon={<ReactIcon size={30} />} title="React My Components" />
+      <p className="text-xl">Icon</p>
+      <p className="font-light">
+        In order to have all icons grouped by a single import I created an index
+        file and export them
+      </p>
+      <Code>
+        <div>{`
 import React from "./ReactIcon";
 import Git from "./GitIcon";
 import Typescript from "./TypescriptIcon";
@@ -75,67 +73,67 @@ const Icons = {
 
 export default Icons;
           `}</div>
-        </Code>
-        <p className="font-light">
-          So if you want to use an icon just need to import them
-        </p>
-        <Code>
-          <div>{`import { YarnIcon } from "../components/common/icons";`}</div>
-        </Code>
-        <p className="font-light">{`You can edit some Icon properties such as colors and size`}</p>
-        <div className="display grid grid-cols-1 gap-y-5">
-          <div className="display grid grid-cols-[80px_auto]">
-            <YarnIcon className="align-self-center self-center justify-self-center" />
-            <Code noHeader>
-              <>{`<YarnIcon />`}</>
-            </Code>
-          </div>
-          <div className="display grid grid-cols-[80px_auto]">
-            <YarnIcon className="self-center justify-self-center" size={30} />
-            <Code noHeader>
-              <>{`<YarnIcon size={30} />`}</>
-            </Code>
-          </div>
-          <div className="display grid grid-cols-[80px_auto]">
-            <YarnIcon className="self-center justify-self-center" size={40} />
-            <Code noHeader>
-              <>{`<YarnIcon size={40} />`}</>
-            </Code>
-          </div>
-          <div className="display grid grid-cols-[80px_auto]">
-            <YarnIcon
-              className="self-center justify-self-center"
-              size={40}
-              catColor={"yellow"}
-            />
-            <Code noHeader>
-              <>{`<YarnIcon catColor={"yellow"} size={30} />`}</>
-            </Code>
-          </div>
-          <div className="display grid grid-cols-[80px_auto]">
-            <YarnIcon
-              className="self-center justify-self-center"
-              size={40}
-              color={"green"}
-            />
-            <Code noHeader>
-              <>{`<YarnIcon size={30} color={"green"} />`}</>
-            </Code>
-          </div>
-          <div className="display grid grid-cols-[80px_auto]">
-            <YarnIcon
-              className="self-center justify-self-center"
-              size={40}
-              circleColor={"transparent"}
-            />
-            <Code noHeader>
-              <>{`<YarnIcon size={30} circleColor={"transparent"}  />`}</>
-            </Code>
-          </div>
+      </Code>
+      <p className="font-light">
+        So if you want to use an icon just need to import them
+      </p>
+      <Code>
+        <div>{`import { YarnIcon } from "../components/common/icons";`}</div>
+      </Code>
+      <p className="font-light">{`You can edit some Icon properties such as colors and size`}</p>
+      <div className="display grid grid-cols-1 gap-y-5">
+        <div className="display grid grid-cols-[80px_auto]">
+          <YarnIcon className="align-self-center self-center justify-self-center" />
+          <Code noHeader>
+            <>{`<YarnIcon />`}</>
+          </Code>
         </div>
-        <p className="font-light">Example of Yarn icon:</p>
-        <Code>
-          <>{`const YarnIcon = ({
+        <div className="display grid grid-cols-[80px_auto]">
+          <YarnIcon className="self-center justify-self-center" size={30} />
+          <Code noHeader>
+            <>{`<YarnIcon size={30} />`}</>
+          </Code>
+        </div>
+        <div className="display grid grid-cols-[80px_auto]">
+          <YarnIcon className="self-center justify-self-center" size={40} />
+          <Code noHeader>
+            <>{`<YarnIcon size={40} />`}</>
+          </Code>
+        </div>
+        <div className="display grid grid-cols-[80px_auto]">
+          <YarnIcon
+            className="self-center justify-self-center"
+            size={40}
+            catColor={"yellow"}
+          />
+          <Code noHeader>
+            <>{`<YarnIcon catColor={"yellow"} size={30} />`}</>
+          </Code>
+        </div>
+        <div className="display grid grid-cols-[80px_auto]">
+          <YarnIcon
+            className="self-center justify-self-center"
+            size={40}
+            color={"green"}
+          />
+          <Code noHeader>
+            <>{`<YarnIcon size={30} color={"green"} />`}</>
+          </Code>
+        </div>
+        <div className="display grid grid-cols-[80px_auto]">
+          <YarnIcon
+            className="self-center justify-self-center"
+            size={40}
+            circleColor={"transparent"}
+          />
+          <Code noHeader>
+            <>{`<YarnIcon size={30} circleColor={"transparent"}  />`}</>
+          </Code>
+        </div>
+      </div>
+      <p className="font-light">Example of Yarn icon:</p>
+      <Code>
+        <>{`const YarnIcon = ({
   color,
   lineColor = "white",
   circleColor = "#3A99C6",
@@ -177,72 +175,69 @@ export default Icons;
 
 export default YarnIcon;
 `}</>
-        </Code>
-        <p className="font-light">
-          In a simple way you can edit all icons props
-        </p>
-        <div className="relative h-[300px] max-w-[100vw]">
-          <div className="absolute left-[-32px] max-w-[100vw] overflow-x-scroll pl-[32px] ">
-            <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
-              {icons.map(({ icon, size }, index) => (
-                <div
-                  key={index}
-                  className="m-2 flex
+      </Code>
+      <p className="font-light">In a simple way you can edit all icons props</p>
+      <div className="relative h-[300px] max-w-[100vw]">
+        <div className="absolute left-[-32px] max-w-[100vw] overflow-x-scroll pl-[32px] ">
+          <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
+            {icons.map(({ icon, size }, index) => (
+              <div
+                key={index}
+                className="m-2 flex
               h-[60px]
               w-[60px]
               min-w-[60px]
               items-center
               justify-center p-2"
-                >
-                  {cloneElement(icon, { size })}
-                </div>
-              ))}
-            </div>
-            <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
-              {icons.map(({ icon, size }, index) => (
-                <div
-                  key={index}
-                  className="m-2 flex
+              >
+                {cloneElement(icon, { size })}
+              </div>
+            ))}
+          </div>
+          <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
+            {icons.map(({ icon, size }, index) => (
+              <div
+                key={index}
+                className="m-2 flex
                 h-[60px]
                 w-[60px]
                 min-w-[60px]
                 items-center
                 justify-center rounded-lg bg-[#326EAC] p-2"
-                >
-                  {cloneElement(icon, { size, color: "white" })}
-                </div>
-              ))}
-            </div>
-            <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
-              {icons.map(({ icon, size }, index) => (
-                <div
-                  key={index}
-                  className="m-2 flex
+              >
+                {cloneElement(icon, { size, color: "white" })}
+              </div>
+            ))}
+          </div>
+          <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
+            {icons.map(({ icon, size }, index) => (
+              <div
+                key={index}
+                className="m-2 flex
                 h-[60px]
                 w-[60px]
                 min-w-[60px]
                 items-center
                 justify-center  p-2"
-                >
-                  {cloneElement(icon, { size, color: "black" })}
-                </div>
-              ))}
-            </div>
-            <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
-              {icons.map(({ icon, size }, index) => (
-                <div
-                  key={index}
-                  className="m-2 flex
+              >
+                {cloneElement(icon, { size, color: "black" })}
+              </div>
+            ))}
+          </div>
+          <div className="flex max-w-[100vw] flex-shrink items-center justify-start">
+            {icons.map(({ icon, size }, index) => (
+              <div
+                key={index}
+                className="m-2 flex
                 h-[60px]
                 w-[60px]
                 min-w-[60px]
                 items-center
                 justify-center  p-2"
-                >
-                  {cloneElement(icon, { size, color: "#326EAC" })}
-                </div>
-              ))}
-            </div>
+              >
+                {cloneElement(icon, { size, color: "#326EAC" })}
+              </div>
+            ))}
           </div>
         </div>
       </div>

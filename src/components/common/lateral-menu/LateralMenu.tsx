@@ -20,15 +20,12 @@ const PageButton = ({ page, level = 0 }: { page: Page; level?: number }) => {
 };
 
 const LateralMenu = () => {
-  console.log(pages);
   return (
-    <div className="relative h-[100vh] w-[300px]">
-      <div className="fixed h-[100vh] w-[300px] bg-red-400">
-        {pages.map((page: Page, index: number) => (
-          <PageButton key={page.path} page={page} />
-        ))}
-      </div>
-    </div>
+    <>
+      {pages.map((page: Page, index: number) => (
+        <PageButton key={page.path} page={page} />
+      ))}
+    </>
   );
 };
 

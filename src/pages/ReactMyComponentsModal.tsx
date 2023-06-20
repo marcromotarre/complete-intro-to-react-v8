@@ -88,49 +88,47 @@ const ReactMyComponentsModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   return (
-    <div className="">
-      <Header />
-      <div className="grid grid-cols-1 gap-y-4 p-8">
-        <Title icon={<ReactIcon size={30} />} title="React My Components" />
-        <p className="text-xl">Modal</p>
+    <div className="grid grid-cols-1 gap-y-4 p-8">
+      <Title icon={<ReactIcon size={30} />} title="React My Components" />
+      <p className="text-xl">Modal</p>
 
-        <p className="font-light">
-          I created a general modal to use in all the application.
-        </p>
-        <p className="font-light">Here you have some cool examples</p>
-        <div className="relative h-[50px]">
-          <div className="absolute left-[-32px] flex max-w-[100vw] flex-shrink items-center justify-start overflow-x-scroll pl-[32px]">
-            {modals.map((modal, index) => (
-              <button
-                onClick={() => {
-                  setModalIndex(index);
-                  setIsModalOpen(true);
-                }}
-                key={index}
-                className="mr-4 flex min-w-fit items-center justify-center rounded-md bg-blue-400 p-3"
-              >
-                {cloneElement(modal.icon, {})}
-                <p className="ml-2 text-white">{modal.name}</p>
-              </button>
-            ))}
-          </div>
+      <p className="font-light">
+        I created a general modal to use in all the application.
+      </p>
+      <p className="font-light">Here you have some cool examples</p>
+      <div className="relative h-[50px]">
+        <div className="absolute left-[-32px] flex max-w-[100vw] flex-shrink items-center justify-start overflow-x-scroll pl-[32px]">
+          {modals.map((modal, index) => (
+            <button
+              onClick={() => {
+                setModalIndex(index);
+                setIsModalOpen(true);
+              }}
+              key={index}
+              className="mr-4 flex min-w-fit items-center justify-center rounded-md bg-blue-400 p-3"
+            >
+              {cloneElement(modal.icon, {})}
+              <p className="ml-2 text-white">{modal.name}</p>
+            </button>
+          ))}
         </div>
+      </div>
 
-        {isModalOpen &&
-          cloneElement(modals[modalIndex].component, {
-            onClose: () => {
-              setIsModalOpen(false);
-            },
-          })}
-        <p className="font-light">
-          {`As a model can only have one Instance in the whole application I created a unique div`}
-        </p>
-        <Code>
-          <>{`<div id="modal"></div>`}</>
-        </Code>
-        <p className="font-light">{`The modal component use useRef React Hook in order to ensure that there is only one Instance. Eith the useEffect we append or remove the modal in div with id = "modal"`}</p>
-        <Code>
-          <>{`
+      {isModalOpen &&
+        cloneElement(modals[modalIndex].component, {
+          onClose: () => {
+            setIsModalOpen(false);
+          },
+        })}
+      <p className="font-light">
+        {`As a model can only have one Instance in the whole application I created a unique div`}
+      </p>
+      <Code>
+        <>{`<div id="modal"></div>`}</>
+      </Code>
+      <p className="font-light">{`The modal component use useRef React Hook in order to ensure that there is only one Instance. Eith the useEffect we append or remove the modal in div with id = "modal"`}</p>
+      <Code>
+        <>{`
 const elRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
 if (!elRef.current) {
   elRef.current = document.createElement("div");
@@ -149,10 +147,10 @@ useEffect(() => {
   };
 }, []);
 `}</>
-        </Code>
-        <p className="font-light">{`Let's have a look to the modal component`}</p>
-        <Code>
-          <>{`
+      </Code>
+      <p className="font-light">{`Let's have a look to the modal component`}</p>
+      <Code>
+        <>{`
 const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   const elRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   if (!elRef.current) {
@@ -220,11 +218,11 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
   );
 };
 `}</>
-        </Code>
-        <p className="font-light">{`I used React Compound Pattern to ensure that the modal its easy to use. Creating the ModalHeader ModalBody & the Modal Footer`}</p>
-        <p className="">{`ModalHeader`}</p>
-        <Code>
-          <>{`
+      </Code>
+      <p className="font-light">{`I used React Compound Pattern to ensure that the modal its easy to use. Creating the ModalHeader ModalBody & the Modal Footer`}</p>
+      <p className="">{`ModalHeader`}</p>
+      <Code>
+        <>{`
 const ModalHeader = ({
   title,
   onClose,
@@ -256,10 +254,10 @@ const ModalHeader = ({
   );
 };
 `}</>
-        </Code>
-        <p className="">{`ModalBody`}</p>
-        <Code>
-          <>{`
+      </Code>
+      <p className="">{`ModalBody`}</p>
+      <Code>
+        <>{`
 const ModalBody = ({ children }: { children?: ReactElement }) => {
   return (
     <div className="overflow-y-scroll">
@@ -268,10 +266,10 @@ const ModalBody = ({ children }: { children?: ReactElement }) => {
   );
 };
 `}</>
-        </Code>
-        <p className="">{`ModalFooter`}</p>
-        <Code>
-          <>{`
+      </Code>
+      <p className="">{`ModalFooter`}</p>
+      <Code>
+        <>{`
 const ModalFooter = ({ children }: { children?: ReactElement }) => {
   return (
     <div>
@@ -281,10 +279,10 @@ const ModalFooter = ({ children }: { children?: ReactElement }) => {
   );
 };
 `}</>
-        </Code>
-        <p className="font-light">{`With this Component pattern now its so easy to use this component and create some modals`}</p>
-        <Code>
-          <>{`
+      </Code>
+      <p className="font-light">{`With this Component pattern now its so easy to use this component and create some modals`}</p>
+      <Code>
+        <>{`
 <Modal onClose={onClose}>
   <Modal.Header title="Git" icon={<GitIcon size={30} />}></Modal.Header>
   <Modal.Body>
@@ -309,8 +307,7 @@ const ModalFooter = ({ children }: { children?: ReactElement }) => {
   </Modal.Footer>
 </Modal>
 `}</>
-        </Code>
-      </div>
+      </Code>
     </div>
   );
 };

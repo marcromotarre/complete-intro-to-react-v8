@@ -4,9 +4,49 @@ export default [
     name: "Project Setup",
   },
   {
+    path: "package-managers",
+    name: "Package Managers",
+    children: [
+      {
+        path: "package-managers/npm",
+        name: "NPM",
+      },
+      {
+        path: "package-managers/npm",
+        name: "Yarn",
+      },
+    ],
+  },
+  {
+    path: "build",
+    name: "Build",
+    children: [
+      {
+        path: "build/webpack",
+        name: "Webpack",
+      },
+      {
+        path: "build/parcel",
+        name: "Parcel",
+      },
+      {
+        path: "build/vite",
+        name: "Vite",
+      },
+    ],
+  },
+  {
     path: "react",
     name: "React",
     children: [
+      {
+        path: "react/state-managers",
+        name: "State Managers",
+        children: [
+          { path: "react/state-managers/redux", name: "Redux" },
+          { path: "react/state-managers/recoil", name: "Recoil" },
+        ],
+      },
       {
         path: "react/my-components",
         name: "My Components",
@@ -52,6 +92,8 @@ export default [
       { path: "react/interesting-questions", name: "Interesting Questions" },
     ],
   },
+  { path: "nextjs", name: "Nextjs" },
+
   {
     path: "javascript",
     name: "Javascript",
@@ -91,5 +133,29 @@ export default [
         name: "Interesting Questions",
       },
     ],
+  },
+  { path: "typescript", name: "Typescript" },
+  {
+    path: "testing",
+    name: "Testing",
+    children: [
+      { path: "testing/unit-testing", name: "Unit Testing" },
+      { path: "testing/integration-testing", name: "Integration Testing" },
+      { path: "testing/integration-end-to-end", name: "E2E (End to End)" },
+      { path: "testing/react-testing-library", name: "React Testing Library" },
+      { path: "testing/jest", name: "Jest" },
+      {
+        path: "testing/cypress",
+        name: "Cypress",
+        children: [
+          { path: "testing/cypress-components", name: "Cypress Components" },
+        ],
+      },
+    ],
+  },
+  {
+    path: "ux-ui",
+    name: "UX / UI",
+    children: [{ path: "ux-ui", name: "Figma" }],
   },
 ];
